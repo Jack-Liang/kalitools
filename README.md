@@ -9,19 +9,17 @@ QQ群：146478946
 Kali Linux Tools Listing
 
 - Information Gathering
-    | 水果        | 价格    |  数量  |
-    | --------   | -----:   | :----: |
-    | 香蕉        | $1      |   5    |
-    | 苹果        | $1      |   6    |
-    | 草莓        | $1      |   7    |
 
-acccheck  
-ace-voip  
-Amap  
-Automater 
-bing-ip2hosts 
-braa  
-CaseFile  
+
+    |    Information Gathering     |     |    |    |    |    |
+    | --------   | --------   | --------   | --------   | --------   | --------   |
+    | acccheck   |ace-voip  |   Amap  |Automater |bing-ip2hosts |braa |
+    | CaseFile   | $1      |   6    | | | |
+    | 草莓        | $1      |   7    | | | |
+    
+ 
+  
+  
 CDPSnarf  
 cisco-torch 
 Cookie Cadger 
