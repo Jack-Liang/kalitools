@@ -44,7 +44,7 @@ acccheck -t 10.10.10.1 -P password.txt
 对“users.txt”中的所有用户尝试“password.txt”中的所有密码。
 acccehck -t 10.10.10.1 -U users.txt -P password.txt 
 对单个用户尝试单个密码。
-acccheck -t 10.10.10.1 -u administrator -p密码
+acccheck -t 10.10.10.1 -u administrator -p 密码
 ```
 
 ##acccheck用法示例
@@ -56,3 +56,4 @@ root@kali:~# acccheck.pl -T smb-ips.txt -v
 主机：192.168.1.201，用户名：Administrator，密码：BLANK
 ```
 
+原文链接：http://tools.kali.org/information-gathering/acccheck
