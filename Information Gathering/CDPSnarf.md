@@ -52,4 +52,16 @@ cdpsnarf -i <dev> [-h] [-w savefile ] [-r dumpfile] [-d]
    
 ##cdpsnarf用法示例
 
-###在接口**eth0（-i）**上嗅探，并将捕获写入名为**cdpsnarf.pcap（-w）**的文件：
+在接口**eth0（-i）**上嗅探，并将捕获写入名为**cdpsnarf.pcap（-w）**的文件：
+
+```
+root @ kali：〜＃cdpsnarf -i eth0 -w cdpsnarf.pcap 
+CDPSnarf v0.1.6 [$ Rev：797 $]发起。
+   作者：Tasos“Zapotek”Laskos 
+           <tasos.laskos@gmail.com> 
+              <zapotek@segfault.gr> 
+   网站：http://github.com/Zapotek/cdpsnarf 
+
+从eth0读取数据包。
+正在等待CDP数据包...
+```
