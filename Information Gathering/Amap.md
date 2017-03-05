@@ -3,7 +3,7 @@
 Amap是pentester的第一个下一代扫描工具。它尝试识别应用程序，即使它们在不同于正常端口的端口上运行。
 它还识别基于非ascii的应用程序。这是通过发送触发数据包，并在响应字符串列表中查找响应来实现的。
 
-**资料来源：https://www.thc.org/thc-amap/ 
+**资料来源**：https://www.thc.org/thc-amap/ 
 
 Amap主页(http://www.thc.org/thc-amap/) | Kali Amap Repo(http://git.kali.org/gitweb/?p=packages/amap.git;a=summary)
 
