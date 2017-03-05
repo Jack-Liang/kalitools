@@ -3,7 +3,8 @@
 Bing.com是微软拥有的以前称为MSN搜索和实时搜索的搜索引擎。它具有搜索托管在特定IP地址上的网站的独特功能。Bing-ip2hosts使用此功能枚举Bing已为特定IP地址编入索引的所有主机名。这种技术被认为是在渗透测试的侦察阶段的最佳实践，以便发现更大的潜在攻击面。Bing-ip2hosts是用Bash的Bash脚本语言编写的。这使用移动界面，不需要API密钥。
 
 资料来源：http://www.morningstarsecurity.com/research/bing-ip2hosts 
-bing-ip2hosts主页(http://www.morningstarsecurity.com/research/bing-ip2hosts/) | Kali bing-ip2hosts Repo(http://git.kali.org/gitweb/?p=packages/bing-ip2hosts.git;a=summary)
+
+[bing-ip2hosts主页](http://www.morningstarsecurity.com/research/bing-ip2hosts/) | [Kali bing-ip2hosts Repo](http://git.kali.org/gitweb/?p=packages/bing-ip2hosts.git;a=summary)
 
 - 作者：Andrew Horton
 - 许可证：GPLv3
