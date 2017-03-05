@@ -18,7 +18,7 @@ CaseFile能够可视化以CSV，XLS和XLSX电子表格格式存储的数据集�
 CaseFile通过直观地展示搜索项之间的互联链接，帮助您进入思考过程。
 如果访问“隐藏”信息确定您的成功，CaseFile可以帮助您发现它。
 
-资料来源：http://paterva.com/web6/products/casefile.php
+**资料来源**：http://paterva.com/web6/products/casefile.php
 
 [CaseFile主页](http://paterva.com/) | [Kali CaseFile Repo](http://git.kali.org/gitweb/?p=packages/casefile.git;a=summary)
 
