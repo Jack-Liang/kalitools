@@ -34,7 +34,7 @@ Bing.com通过IP地址搜索的能力，例如“IP：210.48.71.196”。
 -p可选http：//前缀输出。用于在shell中右键单击。
 </ dir>
 ```
-bing-ip2hosts用法示例
+##bing-ip2hosts用法示例
 
 ```
 root @ kali：〜＃bing-ip2hosts -p microsoft.com 
