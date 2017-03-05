@@ -8,6 +8,7 @@ Bing.com是微软拥有的以前称为MSN搜索和实时搜索的搜索引擎。
 
 - 作者：Andrew Horton
 - 许可证：GPLv3
+
 ##bing-ip2hosts包中包含的工具
 
 ###bing-ip2hosts - 使用bing.com枚举IP的主机名
