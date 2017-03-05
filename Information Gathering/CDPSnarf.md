@@ -21,7 +21,8 @@ CDPSnarf是专门用于从CDP包中提取信息的网络嗅探器。
 从PCAP转储文件读取数据包
 调试信息（使用“-d”标志）
 使用IPv4和IPv6测试
-资料来源：https://github.com/Zapotek/cdpsnarf 
+
+**资料来源**：https://github.com/Zapotek/cdpsnarf 
 
 [CDPSnarf首页](https://github.com/Zapotek/cdpsnarf) | [卡利CDPSnarf回购](http://git.kali.org/gitweb/?p=packages/cdpsnarf.git;a=summary)
 
