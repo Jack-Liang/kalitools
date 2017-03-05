@@ -48,6 +48,7 @@ cdpsnarf -i <dev> [-h] [-w savefile ] [-r dumpfile] [-d]
    -d显示调试信息
    -h显示帮助消息并退出
    ```
-  ##cdpsnarf用法示例
+   
+##cdpsnarf用法示例
 
 ###在接口**eth0（-i）**上嗅探，并将捕获写入名为**cdpsnarf.pcap（-w）**的文件：
