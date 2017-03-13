@@ -21,7 +21,6 @@ Cookie Cadger是一个图形实用程序，它利用Wireshark套件和Java的强
 ###cookie-cadger - 有线和无线网络的Cookie审核工具
 
 ```
-
 root @ kali：〜＃cookie-cadger --help 
 Cookie Cadger，version 1.06 
 示例用法：
@@ -37,16 +36,11 @@ java -jar CookieCadger.jar
     dbuser = user（requires --dbengine = mysql）-- 
     dbpass = pass（requires --dbengine = mysql）-- 
     dbname = cadgerdata（requires --dbengine = mysql）-- 
-    dbrefreshrate = 15 --dbengine = mysql，requires --headless = off）
-    
+    dbrefreshrate = 15 --dbengine = mysql，requires --headless = off） 
     ```
     
    ##Cookie Cadger用法示例
    
    ```
-   
    root @ kali：〜＃cookie-cadger
-   
    ```
-   
-   ![http://tools.kali.org/wp-content/uploads/2014/02/cookie-cadger.png](http://tools.kali.org/wp-content/uploads/2014/02/cookie-cadger.png)
