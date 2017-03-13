@@ -37,10 +37,9 @@ java -jar CookieCadger.jar
     dbpass = pass（requires --dbengine = mysql）-- 
     dbname = cadgerdata（requires --dbengine = mysql）-- 
     dbrefreshrate = 15 --dbengine = mysql，requires --headless = off） 
-    ```
-    
+```
 ##Cookie Cadger用法示例
-   
-   ```
+
+```
    root @ kali：〜＃cookie-cadger
-   ```
+```
