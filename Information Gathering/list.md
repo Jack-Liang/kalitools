@@ -8,7 +8,7 @@
 |DotDotPwn|enum4linux|enumIAX|Fierce|Firewalk|fragroute|
 |fragrouter|Ghost Phisher|GoLismero|goofile|hping3|InTrace|
 |iSMTP|lbd|Maltego Teeth|masscan|Metagoofil|Miranda|
-|nbtscan-unixwiz|Nmap|ntop|p0f|Parsero|Recon-ng|
+|nbtscan-unixwiz|[Nmap](https://github.com/Jack-Liang/kalitools/blob/master/Information%20Gathering/Amap.md)|ntop|p0f|Parsero|Recon-ng|
 |SET|smtp-user-enum|snmp-check|sslcaudit|SSLsplit|sslstrip|
 |SSLyze|THC-IPV6|theHarvester|TLSSLed|twofi|URLCrazy|
 |Wireshark|WOL-E|Xplico||||
