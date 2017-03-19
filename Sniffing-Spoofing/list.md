@@ -2,7 +2,7 @@
 
 |sniffing&spoofing||||||
 |:--|:--|:--|:--|:--|:--|
-|Burp Suite|DNSChef|fiked|hamster-sidejack|Hexlnject|iaxflood|inviteflood|
+|Burp Suite|[DNSChef](https://github.com/Jack-Liang/kalitools/blob/master/Sniffing-Spoofing/DNSChef.md)|[fiked](https://github.com/Jack-Liang/kalitools/blob/master/Sniffing-Spoofing/Fiked.md)|hamster-sidejack|Hexlnject|iaxflood|inviteflood|
 |iSMTP|isr-evilgrade|mitmproxy|ohrwurm|protos-sip|rebind|
 |responder|rtpbreak|rtpinsertsound|rtpmixsound|sctpscan|SIPArmyKnife|
 |SIPp|SIPVicious|Sniffjoke|SSLplit|sslstrip|THC-IPV6|
