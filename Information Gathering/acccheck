@@ -1,0 +1,52 @@
+#acccheck
+
+#accheck包描述
+acccheck是设计用来破解使用SMB协议的Windows用户密码的字典工具。实际上，它是和“smbclient”二进制文件有关的包装器脚本，并且依赖于smb协议的执行。
+
+**资料来源：** https://labs.portcullis.co.uk/tools/acccheck/
+
+[acccheck 主页](https://labs.portcullis.co.uk/tools/acccheck/)|[kali acccheck Repo](http://git.kali.org/gitweb/?p=packages/acccheck.git;a=summary)
+
+- 作者： Faisal Dean
+
+- 许可证：GPLv2
+
+##acccheck包里的工具
+
+###acccheck-破解SMB协议的密码字典工具
+
+...
+root@kali:~# acccheck
+
+acccheck v0.2.1 - By Faiz
+描述：根据所选择的标志，尝试连接IPC$和ADMIN$共享，并且希望通过字典密码猜测攻击识别给定账户的密码以此来尝试组合用户名与密码。
+
+用法 = ./acccheck [optional]
+
+-t [单个主机IP地址]
+或者
+-T [含有目标IP地址的文件]
+
+选项：
+-p [单个密码]
+-P [包含密码的文件]
+-u [单个用户]
+-U [包含用户名的文件]
+-V [详尽模式]
+
+例子
+尝试使用[BLANK]密码破解‘Administrator’账户
+acccheck -t 10.10.10.1
+尝试使用‘password.txt’里的密码破解‘Administrator’账户
+acccheck -t 10.10.10.1 -P password.txt
+尝试尝试使用‘password.txt’里的密码破解‘users.txt’里的账户
+acccheck -t 10.10.10.1 -U users.txt -P password.txt
+尝试使用单个密码破解单个账户
+acccheck -t 10.10.10.1 -u administrator -p password
+...
+###acccheck用法示例
+扫描包含在smb-ips.txt里的IP地址(-T)并详尽输出(-v):
+...
+root@kali:~# acccheck.pl -T smb-ips.txt -v
+Host:192.168.1.201, Username:Administrator, Password:BLANK
+主机192.168.1.201, 用户名:Administrator, 密码:BLANK
