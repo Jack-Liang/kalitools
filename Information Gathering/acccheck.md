@@ -1,4 +1,4 @@
-#acccheck包描述
+# acccheck包描述
 
 该工具被设计为一个密码字典攻击工具，目标是通过SMB协议的Windows身份验证。它实际上是围绕“smbclient”二进制文件的包装器脚本，因此依赖于它的执行。
 
@@ -9,9 +9,9 @@
 - 作者：Faisal Dean
 - 许可证：GPLv2
 
-##acccheck包中包含的工具
+## acccheck包中包含的工具
 
-###acccheck - SMB的密码字典攻击工具
+### acccheck - SMB的密码字典攻击工具
 
 ```
 root @ kali：〜＃acccheck 
@@ -47,7 +47,7 @@ acccehck -t 10.10.10.1 -U users.txt -P password.txt
 acccheck -t 10.10.10.1 -u administrator -p 密码
 ```
 
-##acccheck用法示例
+## acccheck用法示例
 
 扫描smb-ips.txt（-T）中包含的IP地址，并使用详细输出（-v）：
 
