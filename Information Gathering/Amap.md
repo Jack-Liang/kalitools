@@ -1,35 +1,36 @@
-#Amap包描述
+# Amap包描述
 
-Amap是pentester的第一个下一代扫描工具。它尝试识别应用程序，即使它们在不同于正常端口的端口上运行。
-它还识别基于非ascii的应用程序。这是通过发送触发数据包，并在响应字符串列表中查找响应来实现的。
+Amap是Pentester的新一代扫描工具。它尝试识别应用程序，即使它们在不同于正常端口的端口上运行。
+它还识别基于非ASCII的应用程序。这是通过发送触发数据包，并在响应字符串列表中查找响应来实现的。
 
 **资料来源**：https://www.thc.org/thc-amap/ 
 
 [Amap主页](http://www.thc.org/thc-amap/) |[Kali Amap Repo](http://git.kali.org/gitweb/?p=packages/amap.git;a=summary)
 
-- 作者：van Hauser和DJ RevMoon
+- 作者：van Hauser and DJ RevMoon
 
 - 许可证：其他
 
-##amap包中的工具
+## amap包中的工具
 
-###pcrap - 将随机数据发送到UDP，TCP或SSL端口以禁止响应
+### pcrap - 将随机数据发送到UDP，TCP或SSL端口以禁止响应
 
 ```
-root @ kali：〜＃amapcrap 
-amapcrap v5.4（c）2011 by van Hauser / THC＆lt; vh@thc.org> 
+root@kali:~# amapcrap
+amapcrap v5.4 (c) 2011 by van Hauser/THC &lt;vh@thc.org&gt;
 
-语法：amapcrap [-S] [-u] [-m 0ab] [-M min，max] [-n connections] [-N delay] [-w delay] [-e] [-v] TARGET PORT 
+语法：amapcrap [-S] [-u] [-m 0ab] [-M min，max] [-n connections] [-N delay] [-w delay] [-e] [-v] 目标 端口 
+
 选项：
--S在TCP连接后使用SSL（不能与-u 
-使用）-u使用UDP协议（默认值：TCP）（不能与-c一起使用）
--n连接最大连接数量（默认值：无限制）
--N连接之间的延迟延迟ms（默认值：0）
--w关闭端口之前的延迟延迟（默认值：250） - 
-服务器响应时不停止
--v verbose mode 
+-S 在TCP连接后使用SSL（不能与-u使用）
+-u 使用UDP协议（默认值：TCP）（不能与-c一起使用）
+-n 最大连接数量（默认值：无限制）
+-N 连接延迟间隔ms（默认值：0）
+-w 关闭端口之前的延迟（默认值：250） 
+-e 服务器响应时不停止
+-v 详细模式
 -m 0ab send as random crap：0-nullbytes，a-字母+空格，b-二进制
--M最小值，最大值最小值和随机废话最大长度
+-M 最小值，最大值最小值和随机废话最大长度
 目标端口目标（IP或DNS）和端口发送随机废话
 
 此工具随机数据发送到一个无声的端口非法的响应，它可以
@@ -39,7 +40,7 @@ b：50％）。模式'a'总是发送一行以
 \ r \ n 结尾的字母和空格。访问我们的主页http://www.thc.org
 ##amap - 应用MAPper：pentester的下一代扫描工具
 ```
-##amap用法示例
+## amap用法示例
 
 扫描192.168.1.15上的端口80。显示接收到的横幅（b），不显示关闭的端口（q），并使用详细输出（v）：
 
