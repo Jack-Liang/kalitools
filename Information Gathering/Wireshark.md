@@ -192,6 +192,6 @@ root@kali:~# tshark -f "tcp port 80" -i eth0
 ```
 root@kali:~# wireshark
 ```
-![Image](https://github.com/Jack-Liang/kalitools/blob/master/Information%20Gathering/wireshark.png)
+![Image](http://tools.kali.org/wp-content/uploads/2014/02/wireshark.png)
 
 原文链接：[http://tools.kali.org/information-gathering/wireshark](http://tools.kali.org/information-gathering/wireshark)
