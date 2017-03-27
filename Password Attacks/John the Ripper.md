@@ -18,7 +18,7 @@ John Ripper Pro增加了对Windows NTLM（基于MD4）和Mac OS X 10.4+盐化SHA
 
 资料来源：http://www.openwall.com/john/doc/
 
-[John the Ripper主页](http://www.openwall.com/john/)|[Kali John the Ripper报告](http://git.kali.org/gitweb/?p=packages/john.git;a=summary)
+[John the Ripper主页](http://www.openwall.com/john/)|[Kali John the Ripper仓库](http://git.kali.org/gitweb/?p=packages/john.git;a=summary)
 
 -作者：Solar Designer
 -许可证：GPLv2
