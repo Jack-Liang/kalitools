@@ -59,160 +59,187 @@ alive6 v2.3 (c) 2013 by van Hauser / THC <vh@thc.org> www.thc.org
 命令行或输入文件中的目标地址可以包括如下形式的范围
 2001:db8::1-fff或2001:db8::1-2:0-ffff:0:0-ffff，等等
 出错时返回-1，如果找到的系统是活跃的返回0，什么也没找到则返回1。
-```*************************************************************************************************************
-covert_send6 - 将FILE的内容隐藏地发送到目标
+```
+### covert_send6 - 将文件内容隐秘地发送到目标
 ```
 root@kali:~# covert_send6
 covert_send6 v2.3 (c) 2013 by van Hauser / THC <vh@thc.org> www.thc.org
 
-Syntax: covert_send6 [-m mtu] [-k key] [-s resend] interface target file [port]
+语法: covert_send6 [-m mtu] [-k key] [-s resend] interface target file [port]
 选项：
-   -m mtu指定最大MTU（默认值：interface MTU，min：1000）
-   -k密钥用Blowfish-160加密内容
-   -s重新发送每个分组RESEND次数，默认值：1
+   -m mtu       指定最大MTU（默认值：interface MTU，min：1000）
+   -k key       用Blowfish-160加密内容
+   -s resend    每个分组发送resend次，默认值：1
 
-将文件的内容隐藏到目标，并且其POC - 除此之外
-太复杂 - 它刚刚放入目的地标题。
-covert_send6d - 将隐藏的内容写入FILE
+将文件的内容隐秘地发送到目标，并且其POC - 除比较复杂外 - 刚好放入目标首部。
+```
+### covert_send6d - 将隐秘接收的内容写入文件
 ```
 root@kali:~# covert_send6d
 covert_send6d v2.3 (c) 2013 by van Hauser / THC <vh@thc.org> www.thc.org
-语法：covert_send6d [-k key]接口文件
+
+语法：covert_send6d [-k key] interface file
 
 选项：
-   -k键用Blowfish-160解密内容
+   -k key   用Blowfish-160解密内容
 
-写入隐藏的内容到FILE。
-拒绝6 - 对目标执行各种拒绝服务攻击
+将隐秘接收的内容写入文件。
+```
+### denial6 - 对目标执行各种拒绝服务攻击
 ```
 root@kali:~# denial6
 denial6 v2.3 (c) 2013 by van Hauser / THC <vh@thc.org> www.thc.org
-语法：denial6接口目的地test-case-number
 
-对目标执行各种拒绝服务攻击
-如果系统容易受到攻击，可能会导致系统崩溃或重负载，所以要小心！
-如果没有提供test-case-number，显示的列表。
+语法：denial6 interface destination test-case-number
+
+对目标执行各种拒绝服务攻击。
+如果系统是易受攻击的，则这可导致系统崩溃或重载，所以要小心！
+如果没有提供test-case-number，则只显示攻击列表。
 ```
-detect-new-ip6 - 此工具可以检测加入本地网络的新ipv6地址
+### detect-new-ip6 - 此工具可以检测加入本地网络的新ipv6地址
 ```
 root@kali:~# detect-new-ip6
 detect-new-ip6 v2.3 (c) 2013 by van Hauser / THC <vh@thc.org> www.thc.org
+
 语法：detect-new-ip6 interface [script]
 
 此工具可以检测加入本地网络的新ipv6地址。
-如果提供脚本，则首先使用检测到的IPv6地址执行
-和接口作为第二个命令行选项。
-detect_sniffer6 - 测试本地LAN上的系统是否正在嗅探
-root @ kali：〜＃detect_sniffer6
-detect_sniffer6 v2.3（c）2013由van Hauser / THC <vh@thc.org> www.thc.org
+如果提供了脚本，则首先对检测到的IPv6地址执行此脚本，
+然后再对接口执行。
+```
+### detect_sniffer6 - 测试本地LAN上的系统是否正在被嗅探
+```
+root@kali:~# detect_sniffer6
+detect_sniffer6 v2.3 (c) 2013 by van Hauser / THC <vh@thc.org> www.thc.org
 
 语法：detect_sniffer6 interface [target6]
 
-测试本地LAN上的系统是否正在嗅探。
-适用于Windows，Linux，OS / X和* BSD
-如果没有给出目标，则使用link-local-all-nodes地址
-但是很少有效。
-dnsdict6 - 枚举DNS条目的域
-root @ kali：〜＃dnsdict6
-dnsdict6 v2.3（c）2013年由van Hauser / THC <vh@thc.org> www.thc.org
+测试本地LAN上的系统是否正在被嗅探。
+适用于Windows、Linux、OS/X和*BSD
+如果没有给出目标，则使用link-local-all-nodes地址，但是很少有效。
+```
+### dnsdict6 - 枚举DNS条目的域
+```
+root@kali:~# dnsdict6
+dnsdict6 v2.3 (c) 2013 by van Hauser / THC <vh@thc.org> www.thc.org
 
 语法：dnsdict6 [-d46] [-s | -m | -l | -x] [-t THREADS] [-D] domain [dictionary-file]
 
-枚举DNS条目的域，如果提供，则使用字典文件
-或内置列表。这个工具是基于gnucitizen.org的dnsmap。
+枚举DNS条目的域，如果提供了它使用字典文件，
+否则使用内置列表。这个工具是基于gnucitizen.org的dnsmap。
 
 选项：
- -4还会转储IPv4地址
- -t NO指定要使用的线程数（默认值：8，最大值：32）。
- -D转储选定的内置wordlist，不进行扫描。
- -d显示关于NS和MX DNS域信息的IPv6信息。
- -S执行SRV服务名称猜测
-  - [smlx]通过-s（mall = 50），-m（edium = 796）（DEFAULT）选择字典大小
-           -l（arge = 1416）或-x（treme = 3211）
-dnsrevenum6 - 执行快速反向DNS枚举，并能够应对慢速服务器
-root @ kali：〜＃dnsrevenum6
-dnsrevenum6 v2.3（c）2013年由van Hauser / THC <vh@thc.org> www.thc.org
+ -4         转储IPv4地址
+ -t NO      指定要使用的线程数（默认值：8，最大值：32）。
+ -D         转储选定的内置字列表，不进行扫描。
+ -d         显示NS和MX类型DNS域的IPv6信息。
+ -S         执行SRV服务名猜解
+ -[smlx]    选择字典大小：-s（小=50）、-m（中=796）（默认）
+            -l（大=1416）、-x（极大=3211）
+```
+### dnsrevenum6 - 执行快速反向DNS枚举，并能够应对慢速服务器
+```
+root@kali:~# dnsrevenum6
+dnsrevenum6 v2.3 (c) 2013 by van Hauser / THC <vh@thc.org> www.thc.org
 
 语法：dnsrevenum6 dns-server ipv6address
 
 执行快速反向DNS枚举，并能够应对慢速服务器。
 例子：
-  dnsrevenum6 dns.test.com 2001：db8：42a8 :: / 48
+  dnsrevenum6 dns.test.com 2001:db8:42a8::/48
   dnsrevenum6 dns.test.com 8.a.2.4.8.b.d.0.1.0.0.2.ip6.arpa
-dnssecwalk - 执行DNSSEC NSEC走
-root @ kali：〜＃dnssecwalk
-dnssecwalk v1.2（c）2013 by Marc Heuse <mh@mh-sec.de> http://www.mh-sec.de
+```
+### dnssecwalk - 执行DNSSEC NSEC漫游
+```
+root@kali:~# dnssecwalk
+dnssecwalk v1.2 (c) 2013 by Marc Heuse <mh@mh-sec.de> http://www.mh-sec.de
 
 语法：dnssecwalk [-e46] dns-server domain
 
 选项：
-  - 确保域位于找到的地址中，否则退出
- -4解析找到IPv4地址的条目
- -6解析找到IPv6地址的条目
+ -e     确保域位于找到的地址中，否则退出
+ -4     解析找到条目的IPv4地址
+ -6     解析找到条目的IPv6地址
 
-执行DNSSEC NSEC走。
+执行DNSSEC NSEC漫游。
 
 示例：dnssecwalk dns.test.com test.com
-dos_mld.sh - 如果指定，将首先删除目标的多播地址
-root @ kali：〜＃dos_mld.sh
+```
+### dos_mld.sh - 如果指定，将首先丢弃目标的多播地址
+```
+root@kali:~# dos_mld.sh
 语法：/usr/bin/dos_mld.sh [-2] interface [target-link-local-address multicast-address]
 如果指定，目标的多播地址将首先丢弃。
-所有的组播流量都会一段时间后停止。
-指定-2使用MLDv2。
-dos-new-ip6 - 此工具可防止新的ipv6接口出现
-root @ kali：〜＃dos-new-ip6
-dos-new-ip6 v2.3（c）2013 by van Hauser / THC <vh@thc.org> www.thc.org
+所有的组播流量都会在一段时间后停止。
+指定-2选项使用MLDv2。
+```
+### dos-new-ip6 - 此工具可阻止新的ipv6接口出现
+```
+root@kali:~# dos-new-ip6
+dos-new-ip6 v2.3 (c) 2013 by van Hauser / THC <vh@thc.org> www.thc.org
 
-语法：dos-new-ip6接口
+语法：dos-new-ip6 interface
 
-这个工具通过发送答案来防止新的ipv6接口出现
-重复ip6检查（DAD）。这导致新的ipv6设备的DOS。
-dump_router6 - 转储所有本地路由器及其信息
-root @ kali：〜＃dump_router6
-dump_router6 v2.3（c）2013由van Hauser / THC <vh@thc.org> www.thc.org
+这个工具通过发送重复ip6检查（DAD）应答来阻止新的ipv6接口出现。
+这导致对新ipv6设备的DOS攻击。
+```
+### dump_router6 - 转储所有本地路由器信息
+```
+root@kali:~# dump_router6
+dump_router6 v2.3 (c) 2013 by van Hauser / THC <vh@thc.org> www.thc.org
 
-语法：dump_router6接口
+语法：dump_router6 interface
 
-转载所有本地路由器及其信息
-exploit6 - 在目的地上执行各种CVE已知的IPv6漏洞利用
-root @ kali：〜＃exploit6
-exploit6 v2.3（c）2013 by van Hauser / THC <vh@thc.org> www.thc.org
+转储所有本地路由器信息
+```
+### exploit6 - 对目标执行各种CVE已知的IPv6漏洞利用
+```
+root@kali:~# exploit6
+exploit6 v2.3 (c) 2013 by van Hauser / THC <vh@thc.org> www.thc.org
 
 语法：exploit6 interface destination [test-case-number]
 
-在目的地上执行各种CVE已知的IPv6漏洞利用
-请注意，对于可利用的溢出，仅使用“AAA ...”字符串。
+对目标执行各种CVE已知的IPv6漏洞利用
+请注意，对于可利用的溢出，仅使用“AAA...”字符串。
 如果一个系统很脆弱，那么它会崩溃，所以要小心！
-extract_hosts6.sh - 打印FILE中IPv6地址的主机部分
-root @ kali：〜＃extract_hosts6.sh
-/usr/bin/extract_hosts6.sh文件
-在FILE中打印IPv6地址的主机部分
-extract_networks6.sh - 打印FILE中找到的网络
-root @ kali：〜＃extract_networks6.sh
-/usr/bin/extract_networks6.sh文件
-打印FILE中找到的网络
-fake_advertise6 - 在网络上广告ipv6地址
-root @ kali：〜＃fake_advertise6
-fake_advertise6 v2.3（c）2013 by van Hauser / THC <vh@thc.org> www.thc.org
+```
+### extract_hosts6.sh - 打印文件中IPv6地址的主机部分
+```
+root@kali:~# extract_hosts6.sh
+/usr/bin/extract_hosts6.sh FILE
+打印文件中IPv6地址的主机部分
+```
+### extract_networks6.sh - 打印文件中找到的网络
+```
+root@kali:~# extract_networks6.sh
+/usr/bin/extract_networks6.sh FILE
+打印文件中找到的网络
+```
+### fake_advertise6 - 在网络上广告ipv6地址
+```
+root@kali:~# fake_advertise6
+fake_advertise6 v2.3 (c) 2013 by van Hauser / THC <vh@thc.org> www.thc.org
 
-语法：fake_advertise6 [-DHF] [-Ors] [-n count] [-w seconds] interface ip-address-advertised [target-address [mac-address-advertised [source-ip-address]]]
+语法：fake_advertise6 [-DHF] [-Ors] [-n count] [-w seconds] interface 
+     ip-address-advertised [target-address [mac-address-advertised [source-ip-address]]]
 
 在网络上广告ipv6地址（如果没有指定，则使用自己的mac），
 如果没有设置目标地址，则将其发送到全节点多播地址。
-源IP地址是未设置的地址。
+源IP地址未设置时使用发送者地址。
 
 发送选项：
-  -n计数发送多少包（默认：永远）
-  -w秒发送数据包之间的等待时间（默认值：5）
+  -n count      发送多少包（默认：永远）
+  -w seconds    发送数据包之间的等待时间（默认值：5）
 标志选项：
-  -O不设置覆盖标志（默认值：开）
-  -r DO设置路由器标志（默认：关闭）
-  -s设置请求标志（默认：关闭）
+  -O            不设置覆盖标志（默认：开）
+  -r            设置路由标志（默认：关）
+  -s            设置请求标志（默认：关）
 ND安全漏洞选项（可以组合）：
-  -H添加一个逐跳标题
-  -F添加一次片段标题（可以指定多次）
-  -D添加一个大的目的地头，分片数据包。
-fake_dhcps6 - 虚拟DHCPv6服务器
+  -H            添加一个逐跳首部
+  -F            添加一个单次片段首部（可以指定多次）
+  -D            添加一个大的目标首部，分片数据包。
+```
+### fake_dhcps6 - 虚拟DHCPv6服务器*****************************************************************
 root @ kali：〜＃fake_dhcps6
 fake_dhcps6 v2.3（c）2013由van Hauser / THC <vh@thc.org> www.thc.org
 
