@@ -215,7 +215,7 @@ root@kali:~# extract_networks6.sh
 /usr/bin/extract_networks6.sh FILE
 打印文件中找到的网络
 ```
-### fake_advertise6 - 在网络上广告ipv6地址
+### fake_advertise6 - 在网络上公告ipv6地址
 ```
 root@kali:~# fake_advertise6
 fake_advertise6 v2.3 (c) 2013 by van Hauser / THC <vh@thc.org> www.thc.org
@@ -223,7 +223,7 @@ fake_advertise6 v2.3 (c) 2013 by van Hauser / THC <vh@thc.org> www.thc.org
 语法：fake_advertise6 [-DHF] [-Ors] [-n count] [-w seconds] interface 
      ip-address-advertised [target-address [mac-address-advertised [source-ip-address]]]
 
-在网络上广告ipv6地址（如果没有指定，则使用自己的mac），
+在网络上公告ipv6地址（如果没有指定，则使用自己的mac），
 如果没有设置目标地址，则将其发送到全节点多播地址。
 源IP地址未设置时使用发送者地址。
 
@@ -239,114 +239,134 @@ ND安全漏洞选项（可以组合）：
   -F            添加一个单次片段首部（可以指定多次）
   -D            添加一个大的目标首部，分片数据包。
 ```
-### fake_dhcps6 - 虚拟DHCPv6服务器*****************************************************************
-root @ kali：〜＃fake_dhcps6
-fake_dhcps6 v2.3（c）2013由van Hauser / THC <vh@thc.org> www.thc.org
+### fake_dhcps6 - 假冒DHCPv6服务器
+```
+root@kali:~# fake_dhcps6
+fake_dhcps6 v2.3 (c) 2013 by van Hauser / THC <vh@thc.org> www.thc.org
 
-语法：fake_dhcps6 interface network-address / prefix-length dns-server [dhcp-server-ip-address [mac-address]]
+语法：fake_dhcps6 interface network-address / prefix-length dns-server 
+                 [dhcp-server-ip-address [mac-address]]
 
-假DHCPv6服务器。用于配置地址并设置DNS服务器
-fake_dns6d - 虚拟DNS服务器，为任何查找请求提供相同的ipv6地址
-root @ kali：〜＃fake_dns6d
-fake_dns6d v2.3（c）2013年由van Hauser / THC <vh@thc.org> www.thc.org
+假冒DHCPv6服务器，用于配置地址并设置DNS服务器
+```
+### fake_dns6d - 假冒DNS服务器，为任何查找请求提供相同的ipv6地址
+```
+root@kali:~# fake_dns6d
+fake_dns6d v2.3 (c) 2013 by van Hauser / THC <vh@thc.org> www.thc.org
 
 语法：fake_dns6d interface ipv6-address [fake-ipv6-address [fake-mac]]
-虚拟DNS服务器为任何查找请求提供相同的ipv6地址
-如果客户端具有固定的DNS服务器，则可以将其与寄生虫6一起使用
-注意：服务器非常简单。不符合数据包中的多个查询，norNS，MX等查找。
-fake_dnsupdate6 - 虚拟DNS更新程序
-root @ kali：〜＃fake_dnsupdate6
-fake_dnsupdate6 v2.3（c）2013由van Hauser / THC <vh@thc.org> www.thc.org
+假冒DNS服务器为任何查找请求提供相同的ipv6地址
+如果客户端具有固定的DNS服务器，则可以将其与parasite6一起使用
+注意：服务器非常简单。不支持数据包中的多重查询，也不支持NS、MX等查询。
+```
+### fake_dnsupdate6 - 假冒DNS更新程序
+```
+root@kali:~# fake_dnsupdate6
+fake_dnsupdate6 v2.3 (c) 2013 by van Hauser / THC <vh@thc.org> www.thc.org
 
 语法：fake_dnsupdate6 dns-server full-qualified-host-dns-name ipv6address
 
-示例：fake_dnsupdate6 dns.test.com myhost.sub.test.com :: 1
-fake_mipv6 - 将所有数据包重定向到home-address到转交地址
-root @ kali：〜＃fake_mipv6
-fake_mipv6 v2.3（c）2013由van Hauser / THC <vh@thc.org> www.thc.org
+示例：fake_dnsupdate6 dns.test.com myhost.sub.test.com ::1
+```
+### fake_mipv6 - 将家乡地址所有数据包重定向到转交地址
+```
+root@kali:~# fake_mipv6
+fake_mipv6 v2.3 (c) 2013 by van Hauser / THC <vh@thc.org> www.thc.org
 
-语法：fake_mipv6 interface home-address home-agent-address转交地址
+语法：fake_mipv6 interface home-address home-agent-address care-of-address
 
-如果移动IPv6归属代理被配置为不接受MIPV6更新
-IPSEC，这将重定向所有数据包的home-address到转交地址
-fake_mld26
-root @ kali：〜＃fake_mld26
-fake_mld26 v2.3（c）2013由van Hauser / THC <vh@thc.org> www.thc.org
+如果移动IPv6归属代理被误配置为不使用IPSEC接受MIPV6更新，
+则将家乡地址所有数据包重定向到转交地址
+```
+### fake_mld26
+```
+root@kali:~# fake_mld26
+fake_mld26 v2.3 (c) 2013 by van Hauser / THC <vh@thc.org> www.thc.org
 
-语法：fake_mld26 [-l] interface add | delete | query [multicast-address [target-address [ttl [own-ip [own-mac-address [destination-mac-address]]]]]]
+语法：fake_mld26 [-l] interface add | delete | query [multicast-address 
+[target-address [ttl [own-ip [own-mac-address [destination-mac-address]]]]]]
 
-这使用MLDv2协议。只有协议能够的一个子集
-可以通过命令行来实现。如果您需要某些东西，请编写代码。
-Ad（d）在您选择的多播组中垂直或删除自己 - 或任何您想要的人
-查询询问网络谁正在监听组播地址
-使用-l循环发送（以5秒为间隔），直到按下Control-C。
-fake_mld6 - 广告（d）垂直或删除自己 - 或任何你想要的
-root @ kali：〜＃fake_mld6
-fake_mld6 v2.3（c）2013由van Hauser / THC <vh@thc.org> www.thc.org
+使用MLDv2协议。只有协议功能的一个子集可以通过命令行来实现。如果您需要某些东西，请编写代码。
+可在您选择的多播组中公告或删除自己 - 或任何您想要的人，查询网络上谁正在监听组播地址。
+使用-l选项来循环发送（以5秒为间隔），直到按下Control-C。
+```
+### fake_mld6 - 公告或删除自己 - 或任何你想要的人
+```
+root@kali:~# fake_mld6
+fake_mld6 v2.3 (c) 2013 by van Hauser / THC <vh@thc.org> www.thc.org
 
-语法：fake_mld6 [-l] interface add | delete | query [multicast-address [target-address [ttl [own-ip [own-mac-address [destination-mac-address]]]]]]
+语法：fake_mld6 [-l] interface add | delete | query [multicast-address 
+[target-address [ttl [own-ip [own-mac-address [destination-mac-address]]]]]]
 
-Ad（d）在您选择的多播组中垂直或删除自己 - 或任何您想要的人
-查询询问网络谁正在监听组播地址
-使用-l循环发送（以5秒为间隔），直到按下Control-C。
-fake_mldrouter6 - 宣布，删除或索取MLD路由器
-root @ kali：〜＃fake_mldrouter6
-fake_mldrouter6 v2.3（c）2013由van Hauser / THC <vh@thc.org> www.thc.org
+在您选择的多播组中公告或删除自己 - 或任何您想要的人，查询网络上谁正在监听组播地址。
+使用-l选项来循环发送（以5秒为间隔），直到按下Control-C。
+```
+### fake_mldrouter6 - 宣告、删除或索取MLD路由器
+```
+root@kali:~# fake_mldrouter6
+fake_mldrouter6 v2.3 (c) 2013 by van Hauser / THC <vh@thc.org> www.thc.org
 
-语法：fake_mldrouter6 [-l] interface advertise | solicitate | terminate [own-ip [own-mac-address]]
+语法：fake_mldrouter6 [-l] interface advertise | solicitate | terminate 
+                     [own-ip [own-mac-address]]
 
-宣布，删除或索取MLD路由器 - 自己或其他人。
-使用-l循环发送（以5秒为间隔），直到按下Control-C。
-fake_pim6
-root @ kali：〜＃fake_pim6
-fake_pim6 v2.3（c）2013 by van Hauser / THC <vh@thc.org> www.thc.org
+宣告、删除或索取MLD路由器 - 自己或其他人。
+使用-l选项来循环发送（以5秒为间隔），直到按下Control-C。
+```
+### fake_pim6
+```
+root@kali:~# fake_pim6
+fake_pim6 v2.3 (c) 2013 by van Hauser / THC <vh@thc.org> www.thc.org
 
-句法：
+语法：
   fake_pim6 [-t ttl] [-s src6] [-d dst6] interface hello [dr_priority]
   fake_pim6 [-t ttl] [-s src6] [-d dst6] interface join | prune neighbor6 multicast6 target6
 
-hello命令可选地选择DR优先级（默认值：0）。
-join和prune命令需要组播组修改目标
-加入或接收的地址和邻居PIM路由器
-使用-s来欺骗源ip6，-d发送到另一个地址比ff02 :: d，
-和-t设置不同的TTL（默认值：1）
-fake_router26 - 宣布自己为路由器，并尝试成为默认路由器
-root @ kali：〜＃fake_router26
-fake_router26 v2.3（c）2013 by van Hauser / THC <vh@thc.org> www.thc.org
+hello命令可选DR优先级（默认值：0）。
+join和prune命令需要多播组来修改加入或离开邻近PIM路由器的目标地址。
+使用-s来欺骗源ip6，-d发送到ff02::d以外的另一个地址，-t设置不同的TTL（默认值：1）
+```
+### fake_router26 - 宣告自己为路由器，并尝试成为默认路由器
+```
+root@kali:~# fake_router26
+fake_router26 v2.3 (c) 2013 by van Hauser / THC <vh@thc.org> www.thc.org
 
-语法：fake_router26 [-E type] [-A网络/前缀] [-R网络/前缀] [-D dns-server] [-s sourceip] [-S sourcemac] [-ardl seconds] [-Tt ms] [ -n no] [-i interval]界面
+语法：fake_router26 [-E type] [-A network/prefix] [-R network/prefix] 
+              [-D dns-server] [-s sourceip] [-S sourcemac] [-ardl seconds]
+              [-Tt ms] [-n no] [-i interval] interface
 
 选项：
- -A网络/前缀添加自动配置网络（最多16次）
-  - 前缀-A的有效生命周期-A（默认为99999）
- -R网络/前缀添加路由条目（最多16次）
- -r秒路由条目生存期-R（默认为4096）
- -D dns-server指定DNS服务器（最多16次）
- -L搜索列表指定DNS域搜索列表，单独条目与，
- -d秒dns的入口生存期-D（默认为4096
- -M mtu要发送的MTU，默认为接口设置
- -s sourceip路由器的源IP，默认为本地连接
- -S sourcemac是路由器的源MAC，默认为您的接口
- -l秒路由器生命周期（默认为2048）
- -T ms可达定时器（默认为0）
- -t ms retrans timer（默认为0）
- -p优先级优先级“低”，“中”，“高”（默认），“保留”
- -F标志设置一个或多个以下标志：managed，other，
-                   代理，代理，保留;单独用逗号分隔
- -E型路由器广告Guard Evasion选项。类型：
-     H简单的逐跳头
-     1个简单的单击碎片头（可以添加多个）
-     D插入一个大的目标头，使其碎片
-     O重叠片段，用于保持第一个目标（Win，BSD，Mac）
-     o用于保持最后目标的重叠片段（Linux，Solaris）
-                    示例：-E H111，-E D
- -m mac-address如果只有一台机器应该接收RA（不是用-E DoO）
- -i间隔时间间隔（默认值：5）
- -n要发送的RA号码（默认值：unlimited）
+ -A network/prefix  添加自动配置网络（最多16次）
+ -a seconds         -A前缀的有效生命周期（默认为99999）
+ -R network/prefix  添加路由条目（最多16次）
+ -r seconds         -R路由条目生存期（默认为4096）
+ -D dns-server      指定DNS服务器（最多16次）
+ -L searchlist      指定DNS域搜索列表，用逗号分隔
+ -d seconds         -D的dns条目生存期（默认为4096）
+ -M mtu             要发送的MTU，默认为接口设置
+ -s sourceip        路由器的源IP，默认为本地连接
+ -S sourcemac       路由器的源MAC，默认为您的接口
+ -l seconds         路由器生命周期（默认为2048）
+ -T ms              可达定时器（默认为0）
+ -t ms              重发定时器（默认为0）
+ -p priority        优先级"low"、"medium"、"high" (默认)、"reserved"
+ -F flags           设置一个或多个以下标志：managed，other，homeagent, 
+                    proxy, reserved; 用逗号分隔
+ -E type            路由器通告守护躲避选项。类型：
+     H              简单的逐跳首部
+     1              简单的一次分片首部（可以添加多个）
+     D              插入一个大的目标首部
+     O              重叠片段用于keep-first目标（Win，BSD，Mac）
+     o              重叠片段用于keep-last目标（Linux，Solaris）
+                    示例: -E H111, -E D
+ -m mac-address     是否应当只有一台机器接收RA（不与-E DoO同用）
+ -i interval        RA包时间间隔（默认值：5）
+ -n number          要发送的RA数量（默认：无限制）
 
-宣布自己为路由器，并尝试成为默认路由器。
-如果提供了不存在的链接本地或mac地址，则会导致DOS。
-fake_router6 - 宣布自己作为路由器，并尝试成为默认路由器。
+宣告自己为路由器，并尝试成为默认路由器。
+如果提供了不存在的本地链接或mac地址，则会导致DOS。
+```
+### fake_router6 - 宣布自己作为路由器，并尝试成为默认路由器。*****************************************
+```
 root @ kali：〜＃fake_router6
 fake_router6 v2.3（c）2013 by van Hauser / THC <vh@thc.org> www.thc.org
 
