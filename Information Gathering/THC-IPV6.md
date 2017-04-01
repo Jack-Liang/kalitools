@@ -526,287 +526,299 @@ fuzz_ip6 v2.3 (c) 2013 by van Hauser / THC <vh@thc.org> www.thc.org
 您只能定义选项-0 ... -9和-s之一，默认为-1。
 出错时返回-1，0目标活跃且测试完成，1目标崩溃。
 ```
-### implementation6 - 执行一些ipv6实现检查***************************************************
-root @ kali：〜＃implementation6
-实施6 v2.3（c）2013年，van Hauser / THC <vh@thc.org> www.thc.org
+### implementation6 - 执行一些ipv6实现检查
+```
+root@kali:~# implementation6
+implementation6 v2.3 (c) 2013 by van Hauser / THC <vh@thc.org> www.thc.org
 
 语法：implementation6 [-p] [-s sourceip6] interface destination [test-case-number]
 
 选项：
-  -s sourceip6使用指定的源IPv6地址
-  -p不要在开始和结束执行活动检查
-执行一些ipv6实现检查，可以用来测试一些
-防火墙功能也。接近2分钟即可完成
-implementation6d - 通过实现6工具识别测试包
-root @ kali：〜＃implementation6d
-实施6d v2.3（c）2013年，van Hauser / THC <vh@thc.org> www.thc.org
+  -s sourceip6  使用指定的源IPv6地址
+  -p            开始和结束时不执行活跃检查
+执行一些ipv6实现检查，也可以用来测试一些防火墙功能。接近2分钟即可完成
+```
+### implementation6d - 通过implementation6工具验证测试包
+```
+root@kali:~# implementation6d
+implementation6d v2.3 (c) 2013 by van Hauser / THC <vh@thc.org> www.thc.org
 
-语法：implementation6d接口
+语法：implementation6d interface
 
-通过实现6工具识别测试包，有用的是检查什么
-数据包通过防火墙
-inject_alive6 - 此工具可解答PPPoE和6in4隧道上的保持活动请求
-root @ kali：〜＃inject_alive6
-inject_alive6 v2.3（c）2013由van Hauser / THC <vh@thc.org> www.thc.org
+通过implementation6工具验证测试包，对检查什么数据包能通过防火墙很有用
+```
+### inject_alive6 - 此工具用于在PPPoE和6in4隧道上的keep-alive请求
+```
+root@kali:~# inject_alive6
+inject_alive6 v2.3 (c) 2013 by van Hauser / THC <vh@thc.org> www.thc.org
 
-语法：inject_alive6 [-ap]接口
+语法: inject_alive6 [-ap] interface
 
-此工具可解答PPPoE和6in4隧道上的保持活动请求;用于PPPoE
-它还发送keep-alive请求。
-请注意，必须设置适当的环境变量THC_IPV6_ {PPPOE | 6IN4}
-选项-a将每15秒主动发送活动请求。
-选项-p不会发送对活动请求的回复。
-inverse_lookup6 - 执行反向地址查询
-root @ kali：〜＃reverse_lookup6
-reverse_lookup6 v2.3（c）2013 van van Hauser / THC <vh@thc.org> www.thc.org
+此工具可解答PPPoE和6in4隧道上的keep-alive请求;对于PPPoE它还发送keep-alive请求。
+请注意，必须设置适当的环境变量THC_IPV6_ {PPPOE|6IN4}。
+选项-a将每15秒主动发送keep-alive请求,-p不会发送对请求的回复。
+```
+### inverse_lookup6 - 执行反向地址查询
+```
+root@kali:~# inverse_lookup6
+inverse_lookup6 v2.3 (c) 2013 by van Hauser / THC <vh@thc.org> www.thc.org
 
-语法：reverse_lookup6接口mac-address
+语法: inverse_lookup6 interface mac-address
 
-执行反向地址查询，获取分配的IPv6地址
-到MAC地址。请注意，只有少数系统支持这一点。
-kill_router6 - 宣布一个目标路由器下来将其从路由表中删除
-root @ kali：〜＃kill_router6
-kill_router6 v2.3（c）2013 by van Hauser / THC <vh@thc.org> www.thc.org
+执行反向地址查询，获取分配到MAC地址的IPv6地址。
+请注意，只有少数系统支持这一点。
+```
+### kill_router6 - 宣告路由器将把一个目标从路由表中删除
+```
+root@kali:~# kill_router6
+kill_router6 v2.3 (c) 2013 by van Hauser / THC <vh@thc.org> www.thc.org
 
 语法：kill_router6 [-HFD] interface router-address [srcmac [dstmac]]
 
-宣布目标路由器下一步将其从路由表中删除。
-如果您提供“*”作为路由器地址，则此工具将嗅探任何网络
+宣告路由器将把一个目标从路由表中删除。如果您提供“*”作为路由器地址，则此工具将嗅探任何网络
 RA数据包并立即发送kill数据包。
-选项-H添加逐跳，-F碎片头和-Ddst头。
-ndpexhaust26 - 使用ICMPv6 TooBig错误消息来淹没目标/ 64网络
-root @ kali：〜＃ndpexhaust26
-ndpexhaust26 v2.3（c）2013年由van Hauser / THC <vh@thc.org> www.thc.org
+选项-H添加逐跳首部，-F分片首部，-D目标首部。
+```
+### ndpexhaust26 - 用ICMPv6 TooBig错误消息洪泛目标/64网络
+```
+root@kali:~# ndpexhaust26
+ndpexhaust26 v2.3 (c) 2013 by van Hauser / THC <vh@thc.org> www.thc.org
 
-语法：ndpexhaust26 [-acpPTUrR] [-s sourceip6]接口target-network
-
-选项：
-  - 添加一个路由器警报的逐跳标头
- -c不计算校验和以节省时间
- -p发送ICMPv6回显请求
- -P发送ICMPv6回显
- -T发送ICMPv6生存时间
- -U发送ICMPv6 Unreachable（无路由）
- -r将您的/ 64前缀的源随机化
- -R将源完全随机化
- -s sourceip6使用此作为源ipv6地址
-
-使用ICMPv6 TooBig错误消息来淹没目标/ 64网络。
-这个工具版本比ndpexhaust6更有效。
-ndpexhaust6 - 使用ICMPv6 TooBig错误消息来洪泛目标/ 64网络
-root @ kali：〜＃ndpexhaust26
-ndpexhaust26 v2.3（c）2013年由van Hauser / THC <vh@thc.org> www.thc.org
-
-语法：ndpexhaust26 [-acpPTUrR] [-s sourceip6]接口target-network
+语法: ndpexhaust26 [-acpPTUrR] [-s sourceip6] interface target-network
 
 选项：
-  - 添加一个路由器警报的逐跳标头
- -c不计算校验和以节省时间
- -p发送ICMPv6回显请求
- -P发送ICMPv6回显
- -T发送ICMPv6生存时间
- -U发送ICMPv6 Unreachable（无路由）
- -r将您的/ 64前缀的源随机化
- -R将源完全随机化
- -s sourceip6使用此作为源ipv6地址
+ -a             添加一个带路由器警报的逐跳首部
+ -c             不计算校验和以节省时间
+ -p             发送ICMPv6回显请求
+ -P             发送ICMPv6回显应答
+ -T             发送ICMPv6生存时间
+ -U             发送ICMPv6不可达（无路由）
+ -r             从您的/64前缀将源随机化
+ -R             将源完全随机化
+ -s sourceip6   使用此作为源ipv6地址
 
-使用ICMPv6 TooBig错误消息来淹没目标/ 64网络。
+用ICMPv6 TooBig错误消息洪泛目标/64网络。
 这个工具版本比ndpexhaust6更有效。
-root @ kali：〜＃ndpexhaust6
+```
+### ndpexhaust6 - 用ICMPv6 TooBig错误消息洪泛目标/64网络
+```
+root@kali:~# ndpexhaust6
 ndpexhaust6 by mario fleischmann <mario.fleischmann@1und1.de>
 
-语法：ndpexhaust6接口destination-network [sourceip]
+语法: ndpexhaust6 interface destination-network [sourceip]
 
 在目标网络中随机ping IP
-node_query6 - 向目标发送ICMPv6节点查询请求
-root @ kali：〜＃node_query6
-node_query6 v2.3（c）2013由van Hauser / THC <vh@thc.org> www.thc.org
+```
+### node_query6 - 向目标发送ICMPv6节点查询请求
+```
+root@kali:~# node_query6
+node_query6 v2.3 (c) 2013 by van Hauser / THC <vh@thc.org> www.thc.org
 
-语法：node_query6接口目标
+语法: node_query6 interface target
 
-向目标发送ICMPv6节点查询请求并转储回复。
-寄生虫6 - 这是IPv6的“ARP​​欺骗者”
-root @ kali：〜＃寄生虫6
-parasite6 v2.3（c）2013 van van Hauser / THC <vh@thc.org> www.thc.org
+向目标发送ICMPv6节点查询请求并转储应答。
+```
+### parasite6 - 这是IPv6的“ARP spoofer”
+```
+root@kali:~# parasite6
+parasite6 v2.3 (c) 2013 by van Hauser / THC <vh@thc.org> www.thc.org
 
 语法：parasite6 [-lRFHD] interface [fake-mac]
 
-这是IPv6的“ARP​​欺骗者”，将所有本地流量重定向到您自己的
-系统（或虚假的，如果假mac不存在）通过回答错误
-邻居请求
-选项-l循环并每5秒重新发送一次目标数据包。
-选项-R也将尝试注入招标的目的地
-NS安全旁路：-F片段，-H逐跳和-D大目标头
-passive_discovery6 - 被动地嗅探网络并转储所有客户端的IPv6地址
-root @ kali：〜＃passive_discovery6
-passive_discovery6 v2.3（c）2013由van Hauser / THC <vh@thc.org> www.thc.org
+这是IPv6的“ARP spoofer”，通过对Neighbor Solitication请求的误导应答，
+将所有本地流量重定向到您自己的系统（或虚假的，如果假冒mac不存在）。
+选项-l循环并每5秒对每个目标重新发送数据包，-R也将尝试注入请求的目标。
+NS安全规避：-F片段，-H逐跳，-D大的目标首部
+```
+### passive_discovery6 - 被动地嗅探网络并转储所有客户端的IPv6地址
+```
+root@kali:~# passive_discovery6
+passive_discovery6 v2.3 (c) 2013 by van Hauser / THC <vh@thc.org> www.thc.org
 
 语法：passive_discovery6 [-Ds] [-m maxhop] [-R prefix] interface [script]
 
 选项：
- -D还要转储目标地址（不适用于-m）
- -s只打印地址，没有其他输出
- -m maxhop被转储的目标的最大跳数可能会消失。
-             0表示仅限本地，最大限度是通常为5
- -R前缀将定义的前缀与链路本地前缀进行交换
+ -D         转储目标地址（不适用于-m）
+ -s         只打印地址，没有其他输出
+ -m maxhop  被转储的目标的最大跳数。0表示仅限本地，最大限度通常为5
+ -R prefix  将定义的前缀与本地链路前缀进行交换
 
-被动嗅探网络并转储检测到的所有客户端的IPv6地址。
-请注意，在切换的环境中，当您另外获得更好的结果
-开始寄生虫6，但这会影响网络。
-如果在接口后面指定了一个脚本名称，它将被调用
-检测到ipv6地址为第一个，接口为第二个选项。
-randicmp6 - 将所有ICMPv6类型和代码组合发送到目标
-root @ kali：〜＃randicmp6
-语法：randicmp6 [-s sourceip] interface destination [type [code]]
+被动嗅探网络并转储检测到的所有客户端IPv6地址。
+请注意，在运行parasite6的环境中能获得更好的结果，但这会影响网络。
+如果在接口后面指定了一个脚本名称，它将首先被用于检测到的ipv6地址，然后是接口。
+```
+### randicmp6 - 将所有ICMPv6类型和代码组合发送到目标
+```
+root@kali:~# randicmp6
+Syntax: randicmp6 [-s sourceip] interface destination [type [code]]
 
-将所有ICMPv6类型和代码组合发送到目标。
-选项-s设置源ipv6地址。
-redir6 - 将路由插入victim-ip，将所有流量重定向到target-ip
-root @ kali：〜＃redir6
-redir6 v2.3（c）2013由van Hauser / THC <vh@thc.org> www.thc.org
+将所有ICMPv6类型和代码组合发送到目标。选项-s设置源ipv6地址。
+```
+### redir6 - 植入路由，将所有到target-ip的流量重定向到victim-ip
+```
+root@kali:~# redir6
+redir6 v2.3 (c) 2013 by van Hauser / THC <vh@thc.org> www.thc.org
 
 语法：redir6 interface victim-ip target-ip original-router new-router [new-router-mac] [hop-limit]
 
-将一条路径植入victim-ip，将所有流量重定向到目标ip
-新ip。您必须知道将处理路由的路由器。
-如果new-router-mac不存在，则会导致DOS。
-如果目标的TTL不是64，则指定这是最后一个选项。
-redirsniff6 - 将路由插入victim-ip，将所有流量重定向到destination-ip
-root @ kali：〜＃redirsniff6
-redirsniff6 v2.3（c）2013由van Hauser / THC <vh@thc.org> www.thc.org
+将一条路由植入victim-ip，将到target-ip的所有流量重定向到新ip。您必须知道将处理路由的路由器。
+如果new-router-mac不存在，则会导致DOS。如果目标的TTL不是64，则将此指定为最后一个选项。
+```
+### redirsniff6 - 植入路由，将所有到destination-ip的流量重定向到victim-ip
+```
+root@kali:~# redirsniff6
+redirsniff6 v2.3 (c) 2013 by van Hauser / THC <vh@thc.org> www.thc.org
 
 语法：redirsniff6 interface victim-ip destination-ip original-router [new-router [new-router-mac]]
 
-将路由插入victim-ip，将所有流量重定向到destination-ip
-新路由器。这是通过该匹配流动的所有流量完成的
-受害者 - >目标。您必须知道将处理路由的路由器。
-如果新路由器/ -mac不存在，则会导致DOS。
+将路由插入victim-ip，将所有到destination-ip的流量重定向到新路由器。这通过修改
+匹配victim->target的所有流量来完成。您必须知道将处理路由的路由器。
+如果新路由器或mac不存在，则会导致DOS。
 您可以为victim-ip和/或destination-ip提供通配符（'*'）。
-rsmurf6 - 蓝精灵受害者的本地网络
-root @ kali：〜＃rsmurf6
-rsmurf6 v2.3（c）2013由van Hauser / THC <vh@thc.org> www.thc.org
+```
+### rsmurf6 - 攻击victim的本地网络
+```
+root@kali:~# rsmurf6
+rsmurf6 v2.3 (c) 2013 by van Hauser / THC <vh@thc.org> www.thc.org
 
 语法：rsmurf6 interface victim-ip
 
-蓝精灵受害者的本地网络。注意：这取决于一个
-实现错误，目前只在Linux上验证。
-邪恶：“ff02 :: 1”作为受害者将完全DOS本地局域网
-sendpees6 - 发送SEND邻居请求消息
-root @ kali：〜＃sendpees6
+攻击victim的本地网络。注意：这取决于一个实现上的错误，目前只在Linux上验证过。
+邪恶：将“ff02: 1”作为victim将彻底DOS你的本地局域网。
+```
+### sendpees6 - 发送SEND邻近请求消息
+```
+root@kali:~# sendpees6
 sendpees6 by willdamn <willdamn@gmail.com>
 
-用法：sendpees6 <inf> <key_length> <前缀> <victim>
+用法: sendpees6 <inf> <key_length> <prefix> <victim>
 
-发送SEND邻居请求消息，并使目标验证一个lota CGA和RSA签名
-sendpeesmp6 - 发送SEND邻居请求消息
-root @ kali：〜＃sendpeesmp6
-原始发送者willdamn <willdamn@gmail.com>
-修改sendpeesMP由Marcin Pohl <marcinpohl@gmail.com>
+发送SEND邻近请求消息，使目标验证一个lota CGA和RSA签名
+```
+### sendpeesmp6 - 发送SEND邻居请求消息
+```
+root@kali:~# sendpeesmp6
+原始sendpees作者willdamn <willdamn@gmail.com>
+修改的sendpeesMP作者Marcin Pohl <marcinpohl@gmail.com>
 基于thc-ipv6的代码
 
-用法：sendpeesmp6 <inferface> <key_length> <前缀> <victim>
+用法：sendpeesmp6 <inferface> <key_length> <prefix> <victim>
 
-发送SEND邻居请求消息，并使目标验证一个lota CGA和RSA签名
-示例：sendpeesmp6 eth0 2048 fe80 :: fe80 :: 1
-smurf6 - 用icmp echo回复smurf目标
-root @ kali：〜＃smurf6
-smurf6 v2.3（c）2013 by van Hauser / THC <vh@thc.org> www.thc.org
+发送SEND邻近请求消息，并使目标验证一个lota CGA和RSA签名
+示例：sendpeesmp6 eth0 2048 fe80:: fe80::1
+```
+### smurf6 - 用icmp echo应答攻击目标
+```
+root@kali:~# smurf6
+smurf6 v2.3 (c) 2013 by van Hauser / THC <vh@thc.org> www.thc.org
 
 语法：smurf6 interface victim-ip [multicast-network-address]
 
-用icmp回应回应目标。回应请求的目标是
-本地全节点组播地址（如果未指定）
-thcping6 - 制作您的特殊icmpv6 echo请求包
-root @ kali：〜＃thcping6
-thcping6 v2.3（c）2013由van Hauser / THC <vh@thc.org> www.thc.org
+用icmp echo应答攻击目标。如果未指定，echo请求的目标是本地全节点组播地址。
+```
+### thcping6 - 制作您的特殊icmpv6 echo请求包
+```
+root@kali:~# thcping6
+thcping6 v2.3 (c) 2013 by van Hauser / THC <vh@thc.org> www.thc.org
 
-语法：thcping6 [-af] [-H o：s：v] [-D o：s：v] [-F dst] [-t ttl] [-c class] [-l label] [-d size] [-S端口| -U端口]接口src6 dst6 [srcmac [dstmac [data]]]
+语法: thcping6 [-af] [-H o:s:v] [-D o:s:v] [-F dst] [-t ttl] [-c class] [-l label] 
+          [-d size] [-S port|-U port] interface src6 dst6 [srcmac [dstmac [data]]]
 
-制作您的特殊icmpv6回应请求数据包。
-您可以在src6，srcmac和dstmac中输入“x”作为自动值。
+制作您的特殊icmpv6 echo请求数据包。您可以在src6、srcmac和dstmac中输入“x”作为自动值。
 选项：
-   - 将路由器警报选项添加到逐跳标头。
-  -q使用quickstart选项添加一个逐跳标头。
-  -E以ethertype IPv4的形式发送
-  -H o：s：v添加具有特殊内容的逐跳标头
-  -D o：s：v添加具有特殊内容的目的地标头
-  -D“xxx”添加了一个大的目的地头，它会分片
-  -f添加一个触发条纹标题
-  -F ipv6address使用源路由到这个最终目的地
-  -t ttl指定TTL（默认值：64）
-  -c class指定一个类（0-4095）
-  -l标签指定标签（0-1048575）
-  -d data_size定义ping数据缓冲区的大小
-  -S端口在定义的端口上使用TCP SYN数据包，而不是ping
-  -U端口在定义的端口上使用UDP数据包，而不是ping
-o：s：v syntax：option-no：size：value，value为十六进制，例如1：2：feab
-返回-1错误或无回复，0正常回复或1错误回复。
-thcsyn6 - 使用TCP-SYN数据包泛洪目标端口
-root @ kali：〜＃thcsyn6
-thcsyn6 v2.3（c）2013由van Hauser / THC <vh@thc.org> www.thc.org
+  -a                添加带有路由警报的逐跳首部
+  -q                添加带有quickstart的逐跳首部
+  -E                以以太网IPv4的形式发送
+  -H o:s:v          添加具有特殊内容的逐跳首部
+  -D o:s:v          添加具有特殊内容的目标首部
+  -D “xxx”          添加一个能导致分片的大的目标首部
+  -f                添加一个一次分片首部
+  -F ipv6address    使用源路由到最终目标
+  -t ttl            指定TTL（默认值：64）
+  -c class          指定一个类（0-4095）
+  -l label          指定标签（0-1048575）
+  -d data_size      定义ping数据缓冲区的大小
+  -S port           在定义的端口上使用TCP SYN数据包，而不是ping
+  -U port           在定义的端口上使用UDP数据包，而不是ping
+o:s:v语法：选项号：大小：值，值为十六进制，例如1:2:feab
+出错或无应答时返回-1，0正常，1错误应答。
+```
+### thcsyn6 - 使用TCP-SYN数据包泛洪目标端口
+```
+root@kali:~# thcsyn6
+thcsyn6 v2.3 (c) 2013 by van Hauser / THC <vh@thc.org> www.thc.org
 
-语法：thcsyn6 [-AcDrRS] [-p port] [-s sourceip6]接口目标端口
+语法: thcsyn6 [-AcDrRS] [-p port] [-s sourceip6] interface target port
 
 选项：
- -A发送TCP-ACK数据包
- -S发送TCP-SYN-ACK数据包
- -r将您的/ 64前缀的源随机化
- -R将源完全随机化
- -s sourceip6使用此作为源ipv6地址
- -D随机化目的地（视为/ 64）
- -p端口使用固定源端口
+ -A             发送TCP-ACK数据包
+ -S             发送TCP-SYN-ACK数据包
+ -r             通过您的/64前缀随机化源
+ -R             将源完全随机化
+ -s sourceip6   使用此作为源ipv6地址
+ -D             随机化目标（视为/64）
+ -p port        使用固定源端口
 
-用TCP-SYN数据包泛洪目标端口。如果你提供“x”作为端口，那么
-是随机的
-toobig6 - 在目标上植入指定的mtu
-root @ kali：〜＃toobig6
-toobig6 v2.3（c）2013由van Hauser / THC <vh@thc.org> www.thc.org
+用TCP-SYN数据包泛洪目标端口。如果你提供“x”作为端口，那么是随机的
+```
+### toobig6 - 在目标上植入指定的mtu
+```
+root@kali:~# toobig6
+toobig6 v2.3 (c) 2013 by van Hauser / THC <vh@thc.org> www.thc.org
 
 语法：toobig6 [-u] interface target-ip existing-ip mtu [hop-limit]
 
-在目标上嵌入指定的mtu。
-如果目标的TTL不是64，则指定为最后一个选项。
-选项-u将发送TooBig，而不会从现有的ip发出欺骗的ping6。
-trace6 - 一个基本但非常快的traceroute6程序
-root @ kali：〜＃trace6
-trace6 v2.3（c）2013由van Hauser / THC <vh@thc.org> www.thc.org
+在目标上植入指定的mtu。如果目标的TTL不是64，则应指定为最后一个选项。
+选项-u将发送TooBig，而不会从现有的ip发出欺骗ping6。
+```
+### trace6 - 一个基本但非常快的traceroute6程序
+```
+root@kali:~# trace6
+trace6 v2.3 (c) 2013 by van Hauser / THC <vh@thc.org> www.thc.org
 
 语法：trace6 [-abdt] [-s src6] interface targetaddress [port]
 
 选项：
-   - 将路由器警报选项插入一个逐跳标头。
-  -D插入目标扩展头
-  -E插入带有无效选项的目标扩展头
-  -F插入一次性碎片头
-  -b而不是ICMP6 Ping，使用TooBig（你不会看到目标）
-  -B而不是ICMP6 Ping，使用PingReply（你不会看到目标）
-  -d将IPv6地址解析为DNS。
-  -t启用隧道检测
-  -s src6指定源IPv6地址
-最大跳数达到31
+  -a        插入带有路由警报的逐跳首部
+  -D        插入目标扩展首部
+  -E        插入带有无效选项的目标扩展首部
+  -F        插入一次分片首部
+  -b        使用TooBig（你将看不到目标），而不是ICMP6 Ping
+  -B        使用PingReply（你将看不到目标），而不是ICMP6 Ping
+  -d        解析IPv6地址
+  -t        启用隧道检测
+  -s src6   指定源IPv6地址
+最大跳数可达31
 
-一个基本但非常快的traceroute6程序。
-如果没有指定端口，则使用ICMP6 Ping请求，否则TCP SYN
-数据包到指定的端口。选项D，E和F可以多次使用。
-address6 Usage Example
+一个基本但非常快的traceroute6程序。如果没有指定端口，则使用ICMP6 Ping请求，
+否则对指定的端口使用TCP SYN数据包。选项D、E和F可以多次使用。
+```
+## address6用法示例
 
-Convert an IPv6 address to a MAC address and vice-versa:
+将IPv6地址转换为MAC地址或相反:
+```
 root@kali:~# address6 fe80::76d4:35ff:fe4e:39c8
 74:d4:35:4e:39:c8
 root@kali:~# address6 74:d4:35:4e:39:c8
 fe80::76d4:35ff:fe4e:39c8
-alive6 Usage Example
+```
+## alive6用法示例
+```
 root@kali:~# alive6 eth0
 Alive: fd77:7c68:420a:1:426c:8fff:fe1b:cb90 [ICMP parameter problem]
 Alive: fd77:7c68:420a:1:20c:29ff:fee5:5bf4 [ICMP echo-reply]
 Alive: fd77:7c68:420a:1:75d9:4f39:a46a:6f83 [ICMP echo-reply]
 Alive: fd77:7c68:420a:1:6912:8e80:e02f:1969 [ICMP echo-reply]
 Alive: fd77:7c68:420a:1:201:6cff:fe6f:ddd1 [ICMP echo-reply]
-detect-new-ip6 Usage Example
+```
+## detect-new-ip6用法示例
+```
 root@kali:~# detect-new-ip6 eth0
 Started ICMP6 DAD detection (Press Control-C to end) ...
 Detected new ip6 address: fe80::85d:9879:9251:853a
-dnsdict6 Usage Example
+```
+## dnsdict6用法示例
+```
 root@kali:~# dnsdict6 example.com
 Starting DNS enumeration work on example.com. ...
 Starting enumerating example.com. - creating 8 threads for 798 words...
