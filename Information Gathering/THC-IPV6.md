@@ -365,56 +365,66 @@ fake_router26 v2.3 (c) 2013 by van Hauser / THC <vh@thc.org> www.thc.org
 宣告自己为路由器，并尝试成为默认路由器。
 如果提供了不存在的本地链接或mac地址，则会导致DOS。
 ```
-### fake_router6 - 宣布自己作为路由器，并尝试成为默认路由器。*****************************************
+### fake_router6 - 宣告自己为路由器，并尝试成为默认路由器。
 ```
-root @ kali：〜＃fake_router6
-fake_router6 v2.3（c）2013 by van Hauser / THC <vh@thc.org> www.thc.org
+root@kali:~# fake_router6
+fake_router6 v2.3 (c) 2013 by van Hauser / THC <vh@thc.org> www.thc.org
 
-语法：fake_router6 [-HFD] interface network-address / prefix-length [dns-server [router-ip-link-local [mtu [mac-address]]]]
+语法：fake_router6 [-HFD] interface network-address / prefix-length 
+          [dns-server [router-ip-link-local [mtu [mac-address]]]]
 
-宣布自己为路由器，并尝试成为默认路由器。
-如果提供了不存在的链接本地或mac地址，则会导致DOS。
-选项-H添加逐跳，-F碎片头和-Ddst头。
-fake_solicitate6 - 在网络上解析ipv6地址
-root @ kali：〜＃fake_solicitate6
-fake_solicitate6 v2.3（c）2013年由van Hauser / THC <vh@thc.org> www.thc.org
+宣告自己为路由器，并尝试成为默认路由器。
+如果提供了不存在的本地链接或mac地址，则会导致DOS。
+选项-H逐跳、-F分片首部、-D目标首部。
+```
+### fake_solicitate6 - 请求ipv6地址
+```
+root@kali:~# fake_solicitate6
+fake_solicitate6 v2.3 (c) 2013 by van Hauser / THC <vh@thc.org> www.thc.org
 
-语法：fake_solicitate6 [-DHF] interface ip-address-solicitated [target-address [mac-address-solicitated [source-ip-address]]]
+语法：fake_solicitate6 [-DHF] interface ip-address-solicitated [target-address
+                             [mac-address-solicitated [source-ip-address]]]
 
-在网络上解析ipv6地址，将其发送到全节点组播地址
-firewall6 - 执行各种ACL旁路尝试来检查实现
-root @ kali：〜＃firewall6
-firewall6 v2.3（c）2013由van Hauser / THC <vh@thc.org> www.thc.org
+在网络上请求pv6地址，将其发送到全节点组播地址
+```
+### firewall6 - 执行各种ACL旁路来尝试检查实现
+```
+root@kali:~# firewall6
+firewall6 v2.3 (c) 2013 by van Hauser / THC <vh@thc.org> www.thc.org
 
 语法：firewall6 [-u] interface destination port [test-case-no]
 
-执行各种ACL旁路尝试来检查实现。
-默认为TCP端口，选项-u切换到UDP。
+执行各种ACL旁路来尝试检查实现。
+默认用TCP端口，选项-u切换到UDP。
 对于所有测试用例来说，必须允许ICMPv6 ping到目的地。
-flood_advertise6 - 用邻居广告洪泛本地网络
-root @ kali：〜＃flood_advertise6
-flood_advertise6 v2.3（c）2013由van Hauser / THC <vh@thc.org> www.thc.org
+```
+### flood_advertise6 - 用邻近公告洪泛本地网络
+```
+root@kali:~# flood_advertise6
+flood_advertise6 v2.3 (c) 2013 by van Hauser / THC <vh@thc.org> www.thc.org
 
-语法：flood_advertise6接口
+语法：flood_advertise6 interface
 
-用邻居广告洪泛本地网络。
-flood_dhcpc6 - DHCP客户端flooder
-root @ kali：〜＃flood_dhcpc6
-flood_dhcpc6 v2.3（c）2013年由van Hauser / THC <vh@thc.org> www.thc.org
+用邻近公告洪泛本地网络。
+```
+### flood_dhcpc6 - DHCP洪泛客户端
+```
+root@kali:~# flood_dhcpc6
+flood_dhcpc6 v2.3 (c) 2013 by van Hauser / THC <vh@thc.org> www.thc.org
 
 语法：flood_dhcpc6 [-n | -N] [-1] [-d] interface [domain-name]
 
-DHCP客户端flooder。用于耗尽DHCP6服务器的IP地址池
-提供。注意：如果游泳池非常大，这是毫无意义的。 :-)
+DHCP洪泛客户端。用于耗尽DHCP6服务器提供的IP地址池。
+注意：如果地址池非常大，那这么做是无意义的。 :-)
 
-默认情况下，链路本地IP MAC地址是随机的，但是这将不起作用
-在某些情况下。 -n将使用真正的MAC，-N真正的MAC和
-链接本地地址。 -1只会解析一个地址，但不要求它。
-如果不使用-N，应该并行运行寄生虫6。
-使用-d强制DNS更新，您可以在命令行中指定一个域名。
-flood_mld26 - 使用MLDv2报告洪泛本地网络
-root @ kali：〜＃flood_mld26
-flood_mld26 v2.3（c）2013由van Hauser / THC <vh@thc.org> www.thc.org
+默认情况下，本地链路IP和MAC地址是随机的，但是这在某些情况下将不起作用。选项-n将使用
+真实MAC，-N使用真实MAC和本地链接地址。-1只会处置一个地址，但不请求它。
+如果不使用-N，你应该同时运行parasite6。使用-d强制DNS更新，您可以在命令行中指定一个域名。
+```
+### flood_mld26 - 用MLDv2报告洪泛本地网络
+```
+root@kali:~# flood_mld26
+flood_mld26 v2.3 (c) 2013 by van Hauser / THC <vh@thc.org> www.thc.org
 
 语法：flood_mld26接口
 
@@ -423,90 +433,100 @@ flood_mld6 - 用MLD报告洪泛本地网络
 root @ kali：〜＃flood_mld6
 flood_mld6 v2.3（c）2013由van Hauser / THC <vh@thc.org> www.thc.org
 
-语法：flood_mld6接口
+语法：fflood_mld26 interface
 
 用MLD报告洪泛本地网络。
-flood_mldrouter6 - 用MLD路由器通告洪泛本地网络
-root @ kali：〜＃flood_mldrouter6
-flood_mldrouter6 v2.3（c）2013由van Hauser / THC <vh@thc.org> www.thc.org
+```
+### flood_mldrouter6 - 用MLD路由通告洪泛本地网络
+```
+root@kali:~# flood_mldrouter6
+flood_mldrouter6 v2.3 (c) 2013 by van Hauser / THC <vh@thc.org> www.thc.org
 
-语法：flood_mldrouter6接口
+语法：flood_mldrouter6 interface
 
-用MLD路由器通告洪泛本地网络。
-flood_router26 - 使用路由器广告洪泛本地网络
-root @ kali：〜＃flood_router26
-flood_router26 v2.3（c）2013由van Hauser / THC <vh@thc.org> www.thc.org
+用MLD路由通告洪泛本地网络。
+```
+### flood_router26 - 用路由通告洪泛本地网络
+```
+root@kali:~# flood_router26
+flood_router26 v2.3 (c) 2013 by van Hauser / THC <vh@thc.org> www.thc.org
 
-语法：flood_router26 [-HFD] [-s] [-RPA]界面
+语法：flood_router26 [-HFD] [-s] [-RPA] interface
 
-用路由器通告来洪泛本地网络。
-每个数据包包含17个前缀和路由令
--F / -D / -H添加fragment / destination / hopbyhop头来绕过RA guard安全。
--R只发送路由条目，没有前缀信息。
--P只发送前缀信息，没有路由条目。
--A就像-P，但是实现了George Kargiotakis的攻击以禁用隐私扩展
-选项-s使用小的寿命，造成更为严重的影响
-flood_router6 - 使用路由器通告来淹没本地网络
-root @ kali：〜＃flood_router6
-flood_router6 v2.3（c）2013由van Hauser / THC <vh@thc.org> www.thc.org
+用路由通告来洪泛本地网络。每个数据包包含17个前缀和路由条目。
+-F/-D/-H添加分片/目标/逐跳首部来绕过RA安全警戒。
+-R只发送路由条目，没有前缀信息。-P只发送前缀信息，没有路由条目。
+-A就像-P，但是实现了George Kargiotakis的攻击以禁用隐私扩展。
+选项-s使用小的寿命值来造成更为严重的影响。
+```
+### flood_router6 - 用路由通告洪泛本地网络
+```
+root@kali:~# flood_router6
+flood_router6 v2.3 (c) 2013 by van Hauser / THC <vh@thc.org> www.thc.org
 
-语法：flood_router6 [-HFD]界面
+语法: flood_router6 [-HFD] interface
 
-用路由器通告来洪泛本地网络。
--F / -D / -H添加fragment / destination / hopbyhop头来绕过RA guard安全。
-flood_solicitate6 - 用邻居请求洪泛网络
-root @ kali：〜＃flood_solicitate6
-flood_solicitate6 v2.3（c）2013 van van Hauser / THC <vh@thc.org> www.thc.org
+用路由通告来洪泛本地网络。-F/-D/-H添加分片/目标/逐跳首部来绕过RA安全警戒。
+```
+### flood_solicitate6 - 用邻近请求洪泛网络
+```
+root@kali:~# flood_solicitate6
+flood_solicitate6 v2.3 (c) 2013 by van Hauser / THC <vh@thc.org> www.thc.org
 
 语法：flood_solicitate6 interface [target]
 
-用邻居招揽网络。
-fragmentation6 - 执行片段防火墙和实现检查
-root @ kali：〜＃fragmentation6
-碎片6 v2.3（c）2013年，van Hauser / THC <vh@thc.org> www.thc.org
+用邻近请求洪泛网络。
+```
+### fragmentation6 - 执行片段防火墙和实现检查
+```
+root@kali:~# fragmentation6
+fragmentation6 v2.3 (c) 2013 by van Hauser / THC <vh@thc.org> www.thc.org
 
 语法：fragmentation6 [-fp] [-n number] interface destination [test-case-no]
 
--f激活洪水模式，发送之间不会暂停; -p首先禁用
-最终ping，-n数字指定每个测试执行的频率
+-f激活洪泛模式，发送之间不会暂停; -p首先禁用、最终ping；-n指定每个测试执行的频率。
+执行片段防火墙和实现检查，包括拒绝服务。
+```
+### fuzz_ip6 - 模糊icmp6数据包
+```
+root@kali:~# fuzz_ip6
+fuzz_ip6 v2.3 (c) 2013 by van Hauser / THC <vh@thc.org> www.thc.org
 
-执行片段防火墙和实施检查，包括拒绝服务
-fuzz_ip6 - 模糊一个icmp6数据包
-root @ kali：〜＃fuzz_ip6
-fuzz_ip6 v2.3（c）2013由van Hauser / THC <vh@thc.org> www.thc.org
+语法: fuzz_ip6 [-x] [-t number | -T number] [-p number] [-IFSDHRJ] 
+              [-X|-1|-2|-3|-4|-5|-6|-7|-8|-9|-0 port] interface 
+              unicast-or-multicast-address [address-in-data-pkt]
 
-语法：fuzz_ip6 [-x] [-t number | -T number] [-p number] [-IFSDHRJ] [-X | -1 | -2 | -3 | -4 | -5 | -6 | -7 | -8 | -9 | -0 port]接口单播-or-multicast-address [address-in-data-pkt]
-
-模糊一个icmp6数据包
+模糊icmp6数据包。
 选项：
- -X不要添加任何ICMP / TCP头（tranport laye）
- -1模糊ICMP6回显请求（默认）
- -2 fuzz ICMP6邻居招揽
- -3模糊ICMP6邻居广告
- -4模糊ICMP6路由器广告
- -5 fuzz组播监听报告报文
- -6 fuzz组播侦听器完成数据包
- -7 fuzz组播侦听器查询报文
- -8 fuzz组播侦听器v2报文包
- -9fuzz组播侦听器v2查询报文
- -0 fuzz节点查询包
- -s端口模糊TCP-SYN数据包对端口
- -x尝试所有256个值用于标志和字节类型
- -t号码从测试号码继续。数
- -T号只执行测试号。数
- -p号码执行一个活动检查每次测试（默认值：无）
-  - 不要执行初始和最终的活动测试
- -n数字发送每个数据包的次数（默认值：1）
- 我也模糊了IP头
- -F添加一次分片，并将其模糊（1）
- -S添加源路由，并将其模糊（1）
- -D添加目标头，并且它也是模糊的（1）
- -H添加逐跳标题，并且它也是模糊的（对于1和5-9）
- -R添加路由器警报头，并将其模糊（5-9和全部）
- -J添加巨型数据包头，并将其模糊（1）
-您只能定义-0 ... -9和-s之一，默认为-1。
-返回-1错误，0测试完成和targt活着或1对目标崩溃。
-implementation6 - 执行一些ipv6实现检查
+ -X         不添加任何ICMP/TCP首部（传输层）
+ -1         模糊ICMP6 echo请求（默认）
+ -2         模糊ICMP6邻居请求
+ -3         模糊ICMP6邻近通告
+ -4         模糊ICMP6路由通告
+ -5         模糊组播监听报告报文
+ -6         模糊组播监听完成报文
+ -7         模糊组播监听查询报文
+ -8         模糊组播监听v2报告报文
+ -9         模糊组播监听v2查询报文
+ -0         模糊节点查询报文
+ -s port    模糊端口TCP-SYN报文
+ -x         尝试标志和字节类型的所有256个值
+ -t number  从第number号继续测试
+ -T number  只执行第number号测试
+ -p number  每number次测试执行一个活跃检查（默认：无）
+ -a         不执行初始和最终的活跃测试
+ -n number  每个报文发送的次数（默认值：1）
+ -I         模糊IP首部
+ -F         添加并模糊一次分片（对应选项1）
+ -S         添加并模糊源路由（对应选项1）
+ -D         添加并模糊目标首部（对应选项1）
+ -H         添加并模糊逐跳首部（对应选项1和5-9）
+ -R         添加并模糊路由器警报首部头（对应选项5-9和其它全部）
+ -J         添加并模糊jumbo数据包首部（对应选项1）
+您只能定义选项-0 ... -9和-s之一，默认为-1。
+出错时返回-1，0目标活跃且测试完成，1目标崩溃。
+```
+### implementation6 - 执行一些ipv6实现检查***************************************************
 root @ kali：〜＃implementation6
 实施6 v2.3（c）2013年，van Hauser / THC <vh@thc.org> www.thc.org
 
