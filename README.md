@@ -3,7 +3,7 @@ Kali Tools Translate Volunteers是一个公益项目，简称KTTV，目标是将
 
 也许你是：
 
-- 技术狂人
+- 技术牛人
 - 安全健将
 - 英语达人
 - 管理能手
