@@ -1,4 +1,6 @@
-#Kali Linux工具文档翻译计划
+ [![License](https://img.shields.io/badge/license-GPLv2-red.svg)](https://raw.githubusercontent.com/sqlmapproject/sqlmap/master/doc/COPYING) 
+ 
+ #Kali Linux工具文档翻译计划
 Kali Tools Translate Volunteers是一个公益项目，简称KTTV，目标是将 http://tools.kali.org/tools-listing 的所有说明文档汉化。
 
 也许你是：
