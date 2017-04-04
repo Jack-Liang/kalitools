@@ -20,7 +20,7 @@ Kali Tools Translate Volunteers是一个公益项目，简称KTTV，目标是将
 
 来吧，不妨让情怀挥洒一次，因为你我的努力将降低更多人接触Kali的门槛，为网络安全做出自己的贡献。
 
-项目地址：[kalitools.github.io](https://github.com/Jack-Liang/kalitools.github.io)
+项目地址：[github.com/Jack-Liang/kalitools](https://github.com/Jack-Liang/kalitools)
 
 QQ群：146478946
 
