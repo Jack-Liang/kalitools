@@ -25,4 +25,4 @@ Kali Tools Translate Volunteers是一个公益项目，简称KTTV，目标是将
 QQ群：146478946
 
 
-http://shields.io/
+[ ](http://shields.io/)
