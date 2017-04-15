@@ -1,9 +1,10 @@
-#Kali Linux工具文档翻译计划
+# Kali Linux工具文档翻译计划 [![执照](https://img.shields.io/github/license/mashape/apistatus.svg)](http://shields.io/)
+ 
 Kali Tools Translate Volunteers是一个公益项目，简称KTTV，目标是将 http://tools.kali.org/tools-listing 的所有说明文档汉化。
 
 也许你是：
 
-- 技术狂人
+- 技术牛人
 - 安全健将
 - 英语达人
 - 管理能手
@@ -19,8 +20,9 @@ Kali Tools Translate Volunteers是一个公益项目，简称KTTV，目标是将
 
 来吧，不妨让情怀挥洒一次，因为你我的努力将降低更多人接触Kali的门槛，为网络安全做出自己的贡献。
 
-项目地址：[kalitools.github.io](https://github.com/Jack-Liang/kalitools.github.io)
+项目地址：[github.com/Jack-Liang/kalitools](https://github.com/Jack-Liang/kalitools)
 
 QQ群：146478946
 
-![](http://upload-images.jianshu.io/upload_images/140958-9c721c249a4c7139.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1080/q/50)
+
+[ ](http://shields.io/)
