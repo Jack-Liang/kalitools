@@ -58,4 +58,5 @@ root@kali:~# 即将推出
 
 ---
 译者：Jack，校对：Jack
-[原文链接](http://tools.kali.org/information-gathering/ace-voip)
+
+原文链接https://tools.kali.org/information-gathering/ace-voip
