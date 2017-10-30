@@ -1,93 +1,114 @@
-#cisco-torch软件包描述
+---
+title: cisco-torch
+categories: Information Gathering
+tags: [vulnerability analysis,kali linux,exploitation tools,cdpsnarf,information gathering,]
+date: 2016-10-19 14:11:46
+---
+0x00 cisco-torch介绍
+-------------
 
-思科Torch大规模扫描，指纹和利用工具是在下一版“黑客暴露的思科网络”上编写的，因为市场上提供的工具无法满足我们的需求。
+Cisco Torch是集大规模扫描，指纹识别和利用工具的下一代“黑掉暴露的思科网络”工具，开发它的原因是上市场上提供的工具不能满足我们的需要。
 
-使得Cisco-torch不同于类似工具的主要特性是大量使用forking在后台启动多个扫描进程，以实现最高的扫描效率。此外，如果需要，它同时使用应用层指纹的几种方法。我们想要快速发现运行Telnet，SSH，Web，NTP和SNMP服务的远程思科主机，并针对发现的服务启动字典攻击。
+Cisco-torch与类似工具不同的主要特性是大量启动多个后台扫描进程，以实现最高的扫描效率。此外，如果需要，它可以同时使用几种应用程序层指纹的方法。我们k'yi快速发现运行Telnet，SSH，Web，NTP和SNMP服务的远程思科主机，并针对发现的服务启动字典攻击。
 
-资料来源：http://www.hackingciscoexposed.com/?link=tools 
-cisco-torch主页 | Kali cisco-torch Repo
+工具来源：https://github.com/Zapotek/cdpsnarf
 
-作者：出生由Arhont团队
-许可证：LGPL-2.1
-cisco-torch包中包含的工具
+[cisco-torch主页][1] | [Kali cisco-torch Repo仓库][2]
 
-cisco-torch - Cisco设备扫描器
+ - 作者：Born by Arhont Team
+ - 证书：LGPL-2.1
 
-root @ kali：〜＃cisco-torch 
-使用配置文件torch.conf ... 
-加载include和plugin ... 
- 版本
-用法：cisco-torch <options> <IP，hostname，network> 
+0x01 cisco-torch功能
+---------------
 
-或：cisco-torch <options> F <hostlist> 
+cisco-torch - 思科设备扫描器
+
+```shell
+root@kali:~# cisco-torch
+sing配置文件torch.conf ...
+正在载入include和plugin ...
+
+用法：cisco-torch <选项> <IP地址，主机名，网络段>
+
+或：cisco-torch <选项> -F <主机列表文件>
 
 可用选项：
--O <输出文件> 
--A所有指纹扫描类型组合
--t Cisco Telnetd扫描
--s Cisco SSHd扫描
--u Cisco SNMP扫描
--g Cisco配置或tftp文件下载
--n NTP指纹扫描
--j TFTP指纹扫描
--l <type> log-level 
-        c critical（默认）
-        v verbose 
-        d debug 
--w Cisco Web服务器扫描
--z Cisco IOS HTTP授权漏洞扫描
--c具有SSL支持的Cisco Webserver扫描
--b密码字典攻击（与-s，-u，-c，-w ，-j或-t）
--V打印工具版本和退出
-示例：cisco-torch -A 10.10.0.0/16 
-        cisco-torch -s -b -F sshtocheck.txt 
-        cisco-torch -w -z 10.10.0.0/ 16 
-        cisco-torch -j -b -g -F tftptocheck.txt-j或-t） -V打印工具版本和退出示例：cisco-torch -A 10.10.0.0/16 cisco-torch -s -b -F sshtocheck.txt cisco-torch -w -z 10.10.0.0/16 cisco-torch -j -b -g -F tftptocheck.txt-j或-t） -V打印工具版本和退出示例：cisco-torch -A 10.10.0.0/16 cisco-torch -s -b -F sshtocheck.txt cisco-torch -w -z 10.10.0.0/16 cisco-torch -j -b -g -F tftptocheck.txt
-cisco-torch用法示例“
+-O          <输出文件>
+-A          组合所有指纹扫描类型
+-t          思科Telnetd扫描
+-s          思科SSHd扫描
+-u          思科SNMP扫描
+-g          Cisco配置或tftp文件下载
+-n          NTP指纹扫描
+-j          TFTP指纹扫描
+-l <type>   日志记录层次
+            c 关键摘要模式（默认）
+            v 详细模式
+            d 调试模式
+-w          思科Web服务器扫描
+-z          思科IOS HTTP授权漏洞扫描
+-c          扫描支持SSL思科Web服务器
+-b          密码字典攻击（仅与-s，-u，-c，-w，-j或-t一起使用）
+-V          打印版本信息并退出
 
-针对目标IP地址（192.168.99.202）运行所有可用的扫描类型（-A ）：
+示例:       
+           cisco-torch -A 10.10.0.0/16
+           cisco-torch -s -b -F sshtocheck.txt
+           cisco-torch -w -z 10.10.0.0/16
+           cisco-torch -j -b -g -F tftptocheck.txt
+```
 
-root @ kali：〜＃cisco-torch -A 192.168.99.202 
-使用配置文件torch.conf ... 
-加载include和plugin ... 
+0x02 cisco-torch用法示例
+-----------------
 
-################### ##########################################＃
-Cisco Torch Mass Scanner 
-＃我们需要它... 
-＃＃http: 
-//www.arhont.com/cisco-torch.pl＃######################### ###################################### 
+运行所有可用的扫描类型（-A）针对目标IP地址（192.168.99.202）：
+```shell
+root@kali:~# cisco-torch -A 192.168.99.202
+Using config file torch.conf...
+Loading include and plugin ...
 
-目标列表包含1个主机
-8853：检查192.168.99.202 ... 
-找不到HUH db，应该在fingerprint.db中
-跳过Telnet指纹
-*通过SNMP找到的*** *** 
-系统说明：Cisco互联网操作系统软件
-IOS（tm）3600软件（C3640-IK9O3S-M ），版本12.3（22），发布软件（fc2） 
-技术支持：http://www.cisco.com/techsupport 
-版权所有（c）1986-2007由cisco系统公司
-编译周一24-Jan-07 1 
+###############################################################
+#   Cisco Torch Mass Scanner                   #
+#   Becase we need it...                                      #
+#   http://www.arhont.com/cisco-torch.pl                      #
+###############################################################
 
-Cisco-IOS网络服务器发现
- HTTP / 1.1 401未授权
-日期：Tue，13 Apr 1993 00:57:07 GMT 
-服务器：cisco-IOS 
-接受范围：无
-WWW验证：基本realm =“level_15_access” 
+List of targets contains 1 host(s)
+8853:   Checking 192.168.99.202 ...
+HUH db not found, it should be in fingerprint.db
+Skipping Telnet fingerprint
+* Cisco by SNMP found ***
+*System Description: Cisco Internetwork Operating System Software
+IOS (tm) 3600 Software (C3640-IK9O3S-M), Version 12.3(22), RELEASE SOFTWARE (fc2)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2007 by cisco Systems, Inc.
+Compiled Wed 24-Jan-07 1
 
-401未授权的
+Cisco-IOS Webserver found
+ HTTP/1.1 401 Unauthorized
+Date: Tue, 13 Apr 1993 00:57:07 GMT
+Server: cisco-IOS
+Accept-Ranges: none
+WWW-Authenticate: Basic realm="level_15_access"
 
-
- WWW验证Web服务器发现
- HTTP / 1.1 401未授权
-日期：Tue，13 Apr 1993 00:57:07 GMT 
-服务器：cisco-IOS 
-接受范围：无
-WWW验证：基本realm =“level_15_access” 
-
-401未授权
+401 Unauthorized
 
 
----> 
-- 所有扫描完成。思科火炬质量扫描仪 - 
---->退出。
+ Cisco WWW-Authenticate webserver found
+ HTTP/1.1 401 Unauthorized
+Date: Tue, 13 Apr 1993 00:57:07 GMT
+Server: cisco-IOS
+Accept-Ranges: none
+WWW-Authenticate: Basic realm="level_15_access"
+
+401 Unauthorized
+
+
+--->
+- All scans done. Cisco Torch Mass Scanner  -
+---> Exiting.
+```
+
+
+  [1]: http://www.hackingciscoexposed.com/?link=tools
+  [2]: http://git.kali.org/gitweb/?p=packages/cisco-torch.git;a=summary%22
