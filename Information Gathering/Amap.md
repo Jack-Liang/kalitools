@@ -1,6 +1,7 @@
+---
 title: Amap
 categories: Information Gathering
-tags: [kali linux,扫描工具,amap,information gathering,amapcrap]
+tags: [kali linux,amap,information gathering,amapcrap]
 date: 2016-10-18 16:52:00
 ---
 0x00 Amap介绍
