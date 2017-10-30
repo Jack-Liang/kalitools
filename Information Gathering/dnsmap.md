@@ -1,64 +1,55 @@
-# dnsmap
+---
+title: dnsmap
+categories: Information Gathering
+tags: [information gathering,recon,dnsmap,dns,kali linux]
+date: 2016-10-20 17:55:00
+---
+0x00 dnsmap介绍
+-------------
 
-## dnsmap包
+dnsmap起源于2006年，是受到一个叫做“The Thief No One Saw”的小故事的启发后开发的，这个小故事能在Paul Craig的书《Stealing the Network - How to Own the Bow》中找到。
+dnsmap 主要用来在渗透测试的信息收集阶段来协助测试网络的基础设施的安全性，它能发现目标的网段，域名，甚至是电话号码等等。
+子域名穷举在穷举子域名方面也是一项新的技术，尤其是在域传送技术失效的时候。（在最近我很少看到公开允许域传输的例子)
 
-dnsmap最初于2006年发布，并受到Paul Craig的科幻故事“The Thief No One Saw”的启发，这个故事可以在“Stealing the Network – How to 0wn the Box”一书中找到。
+工具来源：http://code.google.com/p/dnsmap/
 
-dnsmap主要用于在基础设施安全评估的信息收集/枚举阶段期间由攻击者使用。 在枚举阶段，通常会发现目标公司的IP网段，域名，电话号码等...
+[dnsmap主页][1] | [Kali dnsmap Repo仓库][2]
 
-子域强制是在枚举阶段应该使用的另一种技术，因为它在其他域枚举技术，比如区域传输，不起作用时尤其有用（我很少看到区域传输在这些日子被公开允许）。
+ - 作者：pagvac
+ - 证书：GPLv2
 
+0x01 dnsmap功能
+---------------
 
+dnsmap - DNS域名蛮力穷举工具
 
-**来源**: http://code.google.com/p/dnsmap/
-[dnsmap Homepage](http://code.google.com/p/dnsmap/) | [Kali dnsmap Repo](http://git.kali.org/gitweb/?p=packages/dnsmap.git;a=summary)
-
-- 作者: pagvcac
-
-- 许可证: GPLv2
-
-  ​
-
-## dnsmap包中包含的工具:
-
-### dnsmap - DNS域名暴力破解工具
-
-```
+```shell
 root@kali:~# dnsmap
 dnsmap 0.30 - DNS Network Mapper by pagvac (gnucitizen.org)
 
-usage: dnsmap <target-domain> [options]
-options:
--w <wordlist-file>
--r <regular-results-file>
--c <csv-results-file>
--d <delay-millisecs>
--i <ips-to-ignore> (useful if you're obtaining false positives)
+用法: dnsmap <目标域> [选项]
+选项:
+-w <指定字典文件>
+-r <指定结果以常规格式输出文件>
+-c <指定结果以csv格式输出文件>
+-d <设置延迟(毫秒)>
+-i <忽略的IP> (当你遇到一个虚假的IP地址时很有用)
 
-e.g.:
-dnsmap target-domain.foo
-dnsmap target-domain.foo -w yourwordlist.txt -r /tmp/domainbf_results.txt
-dnsmap target-fomain.foo -r /tmp/ -d 3000
-dnsmap target-fomain.foo -r ./domainbf_results.txt
+示例:
+dnsmap target-domain.com
+dnsmap target-domain.com -w yourwordlist.txt -r /tmp/domainbf_results.txt
+dnsmap target-fomain.com -r /tmp/ -d 3000
+dnsmap target-fomain.com -r ./domainbf_results.txt
 ```
 
-### dnsmap-bulk.sh - DNS域名暴力破解工具
 
-```
-root@kali:~# dnsmap-bulk.sh
-usage: dnsmap-bulk.sh <domains-file> [results-path]
-e.g.:
-dnsmap-bulk.sh domains.txt
-dnsmap-bulk.sh domains.txt /tmp/
-```
+<!--more-->
 
-## dnsmap用法示例
 
-### dnsmap用法示例
+0x02 dnsmap用法示例
+-----------------
 
-用单词表(**-w /usr/share/wordlists/dnsmap.txt**)扫描目标网站 **example.com** 
-
-```
+```shell
 root@kali:~# dnsmap example.com -w /usr/share/wordlists/dnsmap.txt
 dnsmap 0.30 - DNS Network Mapper by pagvac (gnucitizen.org)
 
@@ -66,21 +57,34 @@ dnsmap 0.30 - DNS Network Mapper by pagvac (gnucitizen.org)
 [+] using maximum random delay of 10 millisecond(s) between requests
 ```
 
+0x02 dnsmap-bulk用法示例
+--------------------
 
-
-### dnsmap-bulk用法示例
-
-创建包含要扫描的域名的文件（**domains.txt**）并把它传递给dnsmap-bulk.sh:
-
-```
-root@kali:~# echo "example.com" >> domains.txt
-root@kali:~# echo "example.org" >> domains.txt
-root@kali:~# dnsmap-bulk.sh domains.txt
+```shell
+root@kali:~# dnsmap-bulk.sh domain.txt 
 dnsmap 0.30 - DNS Network Mapper by pagvac (gnucitizen.org)
 
-[+] searching (sub)domains for example.com using built-in wordlist
+[+] searching (sub)domains for acm.cuit.edu.cn using built-in wordlist
 [+] using maximum random delay of 10 millisecond(s) between requests
+
+[+] 0 (sub)domains and 0 IP address(es) found
+[+] completion time: 17 second(s)
+dnsmap 0.30 - DNS Network Mapper by pagvac (gnucitizen.org)
+
+[+] error: entered domain is not valid!
+dnsmap 0.30 - DNS Network Mapper by pagvac (gnucitizen.org)
+
+[+] error: entered domain is not valid!
+dnsmap 0.30 - DNS Network Mapper by pagvac (gnucitizen.org)
+
+[+] error: entered domain is not valid!
+dnsmap 0.30 - DNS Network Mapper by pagvac (gnucitizen.org)
+
+[+] searching (sub)domains for 210.41.225.250 using built-in wordlist
+[+] using maximum random delay of 10 millisecond(s) between requests
+...
+...
 ```
 
-原文链接: http://tools.kali.org/information-gathering/dnsmap
-
+  [1]: http://code.google.com/p/dnsmap/
+  [2]: http://git.kali.org/gitweb/?p=packages/dnsmap.git;a=summary

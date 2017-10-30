@@ -1,59 +1,67 @@
-# acccheck包描述
+---
+title: acccheck
+categories: Information Gathering
+tags: [passwords,kali linux,acccheck,infogathering,password attack,smb,information gathering]
+date: 2016-10-18 11:10:00
+---
+0x00 acccheck介绍
+-------------
 
-该工具被设计为一个密码字典攻击工具，目标是通过SMB协议的Windows身份验证。它实际上是围绕“smbclient”二进制文件的包装器脚本，因此依赖于它的执行。
+CDPSnarf（Cisco Discovery Protocol Sniffer）是专门用于从CDP包提取信息的网络嗅探器。 
 
-**资料来源**： https : //labs.portcullis.co.uk/tools/acccheck/ 
+工具来源：https://labs.portcullis.co.uk/tools/acccheck/
 
-[acccheck主页](http://labs.portcullis.co.uk/application/acccheck) | [Kali acccheck Repo](http://git.kali.org/gitweb/?p=packages/acccheck.git;a=summary)
+[acccheck主页][1] | [Kali acccheck仓库][2]
 
-- 作者：Faisal Dean
-- 许可证：GPLv2
+ - 作者：Faisal Dean
+ - 证书：GPLv2
 
-## acccheck包中包含的工具
+0x01 acccheck功能
+---------------
 
-### acccheck - SMB的密码字典攻击工具
+acccheck-SMB的密码字典攻击工具
 
-```
-root @ kali：〜＃acccheck 
+```shell
+root@kali:~# acccheck
 
-acccheck v0.2.1 - Faiz 
+acccheck v0.2.1 - By Faiz
 
-说明：
-尝试连接到IPC $和ADMIN $共享取决于选择哪些标志，
-并尝试用户名和密码的组合，
-希望通过字典密码猜测攻击识别给定帐户的密码。
+描述： 
+根据给定的选择尝试连接到IPC $和ADMIN $共享，并尝试用户名和密码的组合，以望通过字典密码猜测攻击来识别给定帐户的密码
 
-用法= ./acccheck [可选] 
+用法= ./acccheck [选项] 
 
 -t [单个主机IP地址] 
-或 
+或者
 -T [包含目标IP地址的文件] 
 
-可选：
+选项： 
 -p [单个密码] 
 -P [包含密码的文件] 
--u [单个用户]
+-u [单用户] 
 -U [包含用户名的文件] 
 -v [详细模式] 
 
-示例
-使用[BLANK]密码尝试“Administrator”帐户。
-acccheck -t 10.10.10.1。
-尝试在“password.txt”中针对“Administrator”帐户的所有密码。
+例子：
+使用空密码尝试“管理员”帐户
+acccheck -t 10.10.10.1 
+尝试“password.txt”中所有密码穷举“管理员”帐户密码
 acccheck -t 10.10.10.1 -P password.txt 
-对“users.txt”中的所有用户尝试“password.txt”中的所有密码。
+尝试“password.txt”中所有密码穷举“users.txt”中所有帐户密码
 acccehck -t 10.10.10.1 -U users.txt -P password.txt 
-对单个用户尝试单个密码。
-acccheck -t 10.10.10.1 -u administrator -p 密码
+针对单个用户尝试单个密码
+acccheck -t 10.10.10.1 -u administrator -p password
 ```
 
-## acccheck用法示例
+0x02 acccheck用法示例
+-----------------
 
-扫描smb-ips.txt（-T）中包含的IP地址，并使用详细输出（-v）：
-
+扫描包含在SMB-ips.txt（T）的IP地址中使用空密码的默认账户Administrator，并使用详细输出（-v）：
+```shell
+root@kali:~# acccheck -T smb-ips.txt -v
+Host:192.168.1.201, Username:Administrator, Password:BLANK
 ```
-root@kali:~# acccheck.pl -T smb-ips.txt -v
-主机：192.168.1.201，用户名：Administrator，密码：BLANK
-```
 
-原文链接：http://tools.kali.org/information-gathering/acccheck
+
+  [1]: http://labs.portcullis.co.uk/application/acccheck
+  [2]: http://git.kali.org/gitweb/?p=packages/acccheck.git;a=summary
