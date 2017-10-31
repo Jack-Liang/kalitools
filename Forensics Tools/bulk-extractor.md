@@ -22,6 +22,7 @@ bulk_extractor还创建了它所发现的特征的直方图。 这样非常有�
 <!--more-->
 
 来源：[http://digitalcorpora.org/downloads/bulk_extractor/BEUsersManual.pdf][1]
+
 [主页][2] | [仓库][3]
 
  - 作者：Simson L. Garfinkel
