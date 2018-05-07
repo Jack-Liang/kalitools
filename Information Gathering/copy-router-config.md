@@ -1,6 +1,6 @@
 ---
 title: copy-router-config
-categories: Vulnerability Analysis
+categories: Information Gathering
 tags: [copy-router-config,snmp,kali linux,vulnanalysis,information gathering,networking]
 date: 2016-10-19 22:00:00
 ---

@@ -1,6 +1,6 @@
 ---
 title: acccheck
-categories: Information Gathering
+categories: Password Attacks
 tags: [passwords,kali linux,acccheck,infogathering,password attack,smb,information gathering]
 date: 2016-10-18 11:10:00
 ---
