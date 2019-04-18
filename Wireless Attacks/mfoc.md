@@ -10,7 +10,7 @@ MFOC是一款用于实施Nethemba"离线嵌套"攻击的开源软件。
 请注意，MFOC只有在具有已知密匙时才能从目标恢复其他密钥: 默认密钥(在MFOC中使用硬编码) 或自定义密钥(由用户通过命令行输入)。
 
 
-## 从源码构筑
+## 从源码编译
 ```
 $ git clone https://github.com/nfc-tools/mfoc.git
 $ cd mfoc
