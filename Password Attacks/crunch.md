@@ -1,6 +1,6 @@
-#Crunch
+# Crunch
 ************
-##Crunch 包描述
+## Crunch 包描述
 ************
 Crunch是一款词表（字典）生成器，您可以在其中生成指定标准字符集或指定的字符集。Crunch可以产生所有可能的排列和组合。
 [crunch 主页](https://sourceforge.net/projects/crunch-wordlist/)
@@ -8,7 +8,7 @@ Crunch是一款词表（字典）生成器，您可以在其中生成指定标�
 [资料来源](https：//sourceforge.net/projects/crunch-wordlist//)
 作者：bofh28
 许可：GPLv2
-###特征
+### 特征
 1.crunch以排列组合的方式生成词表（字典）
 2.crunch可以按照行数和文件大小来分解输出
 3.恢复支持
@@ -19,7 +19,7 @@ Crunch是一款词表（字典）生成器，您可以在其中生成指定标�
 8.新的-d选项限制了重复的字符，详细说明请参照man手册
 9.Unicode支持
 ************
-###包含在crunch包中的工具
+### 包含在crunch包中的工具
 Crunch-创建一个基于你指定标准的词表（字典）
 
 (```)
@@ -75,7 +75,7 @@ Crunch 可以创建一个基于你指定标准的词表（字典）。  Crunch�
 (```)
 
 **********
-###Crunch用法示例
+### Crunch用法示例
 使用给定字符（0123456789abcdef）来生成包含最小和最大长度为6的单词的字典文件，将输出保存到6chars.txt
 (```)
 root@kali:~# crunch 6 6 0123456789abcdef -o 6chars.txt
