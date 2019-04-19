@@ -22,18 +22,17 @@ Crunch是一款词表（字典）生成器，您可以在其中生成指定标�
 ### 包含在crunch包中的工具
 Crunch-创建一个基于你指定标准的词表（字典）
 
-(```)
+```
 root@kali:~# crunch
 crunch 版本 3.6
-
+      
 Crunch 可以创建一个基于你指定标准的词表（字典）。  Crunch可以将结果输出到屏幕，文件或者其他程序。
-
+      
 用法: crunch <min> <max> [options]
-
+      
 其中的min和max是指数字（即字符串的长度范围）
-
-
-
+      
+      
 选项：
 -b 指定输出文件大小，只有在有-o START参数存在时才可以使用，输出文件会被分为以开始字符串——截至字符串为名的文件。Eg：./crunch 4 5 -b 20mib -o START 将会生成四个文件：aaaa-gvfed.txt, gvfee-ombqy.txt,ombqz-wcydt.txt, wcydu-zzzzz.txt 有效的类型为kb, mb,  gb,  kib, mib, gib ，前三个类型基于1000，后三个类型基于1024，注意，在数字和类型中间不能有空格，500mb是正确的，而500 mb是错误的。
 
@@ -72,12 +71,12 @@ Crunch 可以创建一个基于你指定标准的词表（字典）。  Crunch�
 -z gzip, bzip2, lzma, and 7z   在-o参数后压缩输出，有效参数为gzip, bzip2, lzma,7z。gzip压缩最快但是压缩率是最低的.gzip2比gzip稍慢一点，但是会更好地压缩。7z压缩的最慢，但是他可以最大化压缩率。
 
 请参阅手册页（man）以获取有关如何使用crunch的说明和示例。
-(```)
+```
 
 **********
 ### Crunch用法示例
 使用给定字符（0123456789abcdef）来生成包含最小和最大长度为6的单词的字典文件，将输出保存到6chars.txt
-(```)
+```
 root@kali:~# crunch 6 6 0123456789abcdef -o 6chars.txt
 Crunch will now generate the following amount of data: 117440512 bytes
 （crunch 现在将生成以下数据量：117440512字节）
@@ -88,5 +87,5 @@ Crunch will now generate the following amount of data: 117440512 bytes
 Crunch will now generate the following number of lines: 16777216
 （crunch 现在将生成以下函数：16777216）
 
-(```)
+```
 
