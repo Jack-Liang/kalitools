@@ -8,9 +8,9 @@ HexInject是一个多功能包注入和嗅探工具，它为用户提供了一�
 
 [HexInject 主页](http://hexinject.sourceforge.net/) | [Kali HexInject 项目](http://git.kali.org/gitweb/?p=packages/hexinject.git;a=summary)
 
-作者：Emanuele Acri
+- 作者：Emanuele Acri
 
-证书：BSD
+- 证书：BSD
 
 ## HexInject软件包中包含的工具
 ### hexinject - 十六进制包注入/嗅探工具
