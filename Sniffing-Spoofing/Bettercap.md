@@ -56,7 +56,7 @@ bettercap v2.11 (type 'help' for a list of commands)
 172.16.10.0/24 > 172.16.10.212  » [12:34:15] [endpoint.new] endpoint 172.16.10.254 detected as 00:50:56:01:33:70 (VMware, Inc.).
 172.16.10.0/24 > 172.16.10.212  » help
 
-           help MODULE :如果没有模块名提供,则列出可用命令或者显示模块的特定帮助信息
+           help MODULE : 如果没有模块名提供,则列出可用命令或者显示模块的特定帮助信息
                 active : 显示活动模块的相关信息
                   quit : 关闭会话并退出
          sleep SECONDS : 休眠一段时间（休眠所给出的秒数）
