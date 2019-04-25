@@ -109,17 +109,16 @@ bettercap v2.11 (type 'help' for a list of commands)
 ↑ 0 B / ↓ 3.2 MB / 11354 pkts / 0 errs
 
 
+```
 
 
 
 
+*****************
 
+### man手册的一些参数
 
-
-
-
-
-
+```
 root@kali:~# ettercap
 
 ettercap 0.8.2 copyright 2001-2015 Ettercap Development Team
