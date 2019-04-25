@@ -44,12 +44,13 @@ Usage of bettercap:
         禁用交互式会话历史记录文件
   -silent
         禁止输出（记录）所有非错误的日志
+```
 
-bettercap用法示例
+### bettercap用法示例
 
 以静默模式扫描系统（-Q），并以cronjob格式（-cronjob）输出：
 
-
+```
 root@kali:~# bettercap 
 bettercap v2.11 (type 'help' for a list of commands)
 
