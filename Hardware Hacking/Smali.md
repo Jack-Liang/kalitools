@@ -1,6 +1,11 @@
-# Smali
-
-## smali工具包简介
+---
+title: Smali
+categories: Hardware Hacking
+tags: [Smali,Hardware Hacking,kali linux]
+date: 2019-06-25 11:23:00
+---
+0x00  Smali介绍
+-------------
 
 smali/baksmali是针对Android的Java虚拟机环境dalvik使用的dex格式的编译/反汇编工具。它的语法大体上基于Jasmin/dedexer 的语法，并支持dex格式的全部功能(注释，调试信息，行信息等等)
 
@@ -10,7 +15,8 @@ smali/baksmali是针对Android的Java虚拟机环境dalvik使用的dex格式的�
 - 作者: Ben Gruver
 - 证书: BSD
 
-### smali软件包中包含的工具
+0x01 包含的工具
+----------------
 
 #### smali–将一组smali文件编译为dex文件
 
@@ -44,7 +50,7 @@ root@kali:~# smali help assemble
   <[<file>|<dir>]+> - 编译指定的文件。如果指定的是路径，会递归地搜索路径以找到全部的.smali文件。
 ```
 
-### baksmali – 对dex文件进行反汇编或dump
+#### baksmali – 对dex文件进行反汇编或dump
 
 ```
 root@kali:~# baksmali --help
@@ -161,6 +167,7 @@ root@kali:~# baksmali help list
   vtables(vtable,v) - 显示dex文件中的虚方法表。
 ```
 
-### smali 用法示例
+0x02 用法示例
+----------------
 
 `root@kali:~# 即将推出`
