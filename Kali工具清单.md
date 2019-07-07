@@ -3,7 +3,7 @@
 |[Information Gathering](Information%20Gathering/list.md)||||||
 |:-:|:-:|:-:|:-:|:-:|:-:|
 |[acccheck](Information%20Gathering/acccheck.md)|[ace-voip](Information%20Gathering/ace-voip.md)|[Amap](Information%20Gathering/Amap.md)|[Automater](Information%20Gathering/Automater.md)|[bing-ip2hosts](Information%20Gathering/bing-ip2hosts.md)|[braa](Information%20Gathering/braa.md)|
-|[CaseFile](Information%20Gathering/CaseFile.md)|[CDPSnarf](Information%20Gathering/CDPSnarf.md)|[cisco-torch](Information%20Gathering/cisco-torch.md)|[Cookie Cadger](Information%20Gathering/Cookie Cadger.md)|[copy-router-config](Information%20Gathering/copy-router-config.md)|[DMitry](Information%20Gathering/DMitry.md)|
+|[CaseFile](Information%20Gathering/CaseFile.md)|[CDPSnarf](Information%20Gathering/CDPSnarf.md)|[cisco-torch](Information%20Gathering/cisco-torch.md)|[Cookie Cadger](Information%20Gathering/Cookie%20Cadger.md)|[copy-router-config](Information%20Gathering/copy-router-config.md)|[DMitry](Information%20Gathering/DMitry.md)|
 |[dnmap](Information%20Gathering/dnmap.md)|[dnsenum](Information%20Gathering/dnsenum.md)|[dnsmap](Information%20Gathering/dnsmap.md)|[DNSRecon](Information%20Gathering/DNSRecon.md)|[dnstracer](Information%20Gathering/dnstracer.md)|[dnswalk](Information%20Gathering/dnswalk.md)|
 |[DotDotPwn](Information%20Gathering/DotDotPwn.md)|[enum4linux](Information%20Gathering/enum4linux.md)|[enumIAX](Information%20Gathering/enumlAX.md)|[Fierce](Information%20Gathering/Fierce.md)|[Firewalk](Information%20Gathering/Firewalk.md)|[fragroute](Information%20Gathering/fragroute.md)|
 |[fragrouter](Information%20Gathering/fragrouter.md)|[Ghost Phisher](Information%20Gathering/Ghost-Fisher.md)|[GoLismero](Information%20Gathering/golismero.md)|[goofile](Information%20Gathering/goofile.md)|[hping3](Information%20Gathering/hping3.md)|[InTrace](Information%20Gathering/intrace.md)|
@@ -69,7 +69,7 @@
 
 |[Sniffing & Spoofing](Sniffing-Spoofing/list.md)||||||
 |:-:|:-:|:-:|:-:|:-:|:-:|
-|[Burp Suite](Sniffing-Spoofing/Burp Suite.md)|[DNSChef](Sniffing-Spoofing/DNSChef.md)|[fiked](Sniffing-Spoofing/Fiked.md)|[hamster-sidejack](Sniffing-Spoofing/hamster-sidejack.md)|[HexInject](Sniffing-Spoofing/Hexinject.md)|iaxflood|
+|[Burp Suite](Sniffing-Spoofing/Burp%20Suite.md)|[DNSChef](Sniffing-Spoofing/DNSChef.md)|[fiked](Sniffing-Spoofing/Fiked.md)|[hamster-sidejack](Sniffing-Spoofing/hamster-sidejack.md)|[HexInject](Sniffing-Spoofing/Hexinject.md)|iaxflood|
 |inviteflood|iSMTP|isr-evilgrade|mitmproxy|ohrwurm|protos-sip|
 |rebind|responder|rtpbreak|rtpinsertsound|rtpmixsound|sctpscan|
 |SIPArmyKnife|SIPp|SIPVicious|SniffJoke|SSLsplit|sslstrip|
@@ -81,7 +81,7 @@
 |:-:|:-:|:-:|:-:|:-:|:-:|
 |[acccheck](Password%20Attacks/acccheck.md)|Burp Suite|CeWL|chntpw|cisco-auditing-tool|CmosPwd|
 |creddump|[crunch](Password%20Attacks/crunch.md)|DBPwAudit|findmyhash|gpp-decrypt|hash-identifier|
-|HexorBase|THC-Hydra|[John the Ripper](Password%20Attacks/John the Ripper.md)|[Johnny](Password%20Attacks/Johnny.md)|keimpx|Maltego Teeth|
+|HexorBase|THC-Hydra|[John the Ripper](Password%20Attacks/John%20the%20Ripper.md)|[Johnny](Password%20Attacks/Johnny.md)|keimpx|Maltego Teeth|
 |Maskprocessor|multiforcer|Ncrack|oclgausscrack|PACK|patator|
 |phrasendrescher|polenum|RainbowCrack|rcracki-mt|RSMangler|SQLdict|
 |Statsprocessor|THC-pptp-bruter|TrueCrack|WebScarab|wordlists|zaproxy|
@@ -97,7 +97,7 @@
 
 |[Hardware Hacking](Hardware%20Hacking/list.md)||||||
 |:-:|:-:|:-:|:-:|:-:|:-:|
-|[Android SDK](Hardware%20Hacking/Android SDK.md)|[ApkTool](Hardware%20Hacking/ApkTool.md)|[Arduino](Hardware%20Hacking/Arduino.md)|[dex2jar](Hardware%20Hacking/dex2jar.md)|[Sakis 3G](Hardware%20Hacking/Sakis 3G.md)|[Smali](Hardware%20Hacking/Smali.md)|
+|[Android SDK](Hardware%20Hacking/Android%20SDK.md)|[ApkTool](Hardware%20Hacking/ApkTool.md)|[Arduino](Hardware%20Hacking/Arduino.md)|[dex2jar](Hardware%20Hacking/dex2jar.md)|[Sakis 3G](Hardware%20Hacking/Sakis%203G.md)|[Smali](Hardware%20Hacking/Smali.md)|
 
 
 |[Reverse Engineering](Reverse-Engineering/list.md)||||||
