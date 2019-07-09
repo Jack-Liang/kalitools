@@ -1,24 +1,14 @@
-信息收集模块
+## 信息收集模块
 
-| Information Gathering ||||||
-
-|:--|:--|:--|:--|:--|:--|
-
-|[acccheck](https://github.com/Jack-Liang/kalitools.github.io/blob/master/Information%20Gathering/acccheck.md)|[ace-voip](https://github.com/Jack-Liang/kalitools/blob/master/Information%20Gathering/ace-voip.md)|[Amap](https://github.com/Jack-Liang/kalitools/blob/master/Information%20Gathering/Amap.md)|[Automoater](https://github.com/Jack-Liang/kalitools/blob/master/Information%20Gathering/Automater.md)|bing-ip2hosts|braa|
-
-|CaseFile|CDPSnarf|cisco-torch|Cookie Cadger|copy-router-config|DMitry|
-
-|dnmap|dnsenum|dnsmap|DNSRecon|dnstracer|dnswalk|
-
-|DotDotPwn|enum4linux|enumIAX|Fierce|Firewalk|fragroute|
-
-|fragrouter|Ghost Phisher|GoLismero|goofile|hping3|InTrace|
-
-|iSMTP|lbd|Maltego Teeth|masscan|Metagoofil|Miranda|
-
-|nbtscan-unixwiz|[Nmap](https://github.com/Jack-Liang/kalitools/blob/master/Information%20Gathering/Amap.md)|ntop|p0f|Parsero|Recon-ng|
+|Information Gathering||||||
+|:-:|:-:|:-:|:-:|:-:|:-:|
+|[acccheck](acccheck.md)|[ace-voip](ace-voip.md)|[Amap](Amap.md)|[Automater](Automater.md)|[bing-ip2hosts](bing-ip2hosts.md)|[braa](braa.md)|
+|[CaseFile](CaseFile.md)|[CDPSnarf](CDPSnarf.md)|[cisco-torch](cisco-torch.md)|[Cookie Cadger](Cookie%20Cadger.md)|[copy-router-config](copy-router-config.md)|[DMitry](DMitry.md)|
+|[dnmap](dnmap.md)|[dnsenum](dnsenum.md)|[dnsmap](dnsmap.md)|[DNSRecon](DNSRecon.md)|[dnstracer](dnstracer.md)|[dnswalk](dnswalk.md)|
+|[DotDotPwn](DotDotPwn.md)|[enum4linux](enum4linux.md)|[enumIAX](enumlAX.md)|[Fierce](Fierce.md)|[Firewalk](Firewalk.md)|[fragroute](fragroute.md)|
+|[fragrouter](fragrouter.md)|[Ghost Phisher](Ghost-Fisher.md)|[GoLismero](golismero.md)|[goofile](goofile.md)|[hping3](hping3.md)|[InTrace](intrace.md)|
+|[iSMTP](iSMTP.md)|[lbd](lbd.md)|[Maltego Teeth](Maltego.md)|[masscan](masscan.md)|[Metagoofil](Metagoofil.md)|Miranda|
+|[nbtscan-unixwiz](nbtscan-unixwiz.md)|[Nmap](Nmap.md)|ntop|p0f|Parsero|Recon-ng|
 |SET|smtp-user-enum|snmp-check|sslcaudit|SSLsplit|sslstrip|
-
-|SSLyze|[THC-IPV6](https://github.com/Jack-Liang/kalitools/blob/master/Information%20Gathering/THC-IPV6.md)|[theHarvester](https://github.com/Jack-Liang/kalitools/blob/master/Information%20Gathering/theHarvester.md)|[TLSSLed](https://github.com/Jack-Liang/kalitools/blob/master/Information%20Gathering/TLSSLed.md)|[twofi](https://github.com/Jack-Liang/kalitools/blob/master/Information%20Gathering/twofi.md)|[URLCrazy](https://github.com/Jack-Liang/kalitools/blob/master/Information%20Gathering/URLCrazy.md)|
-
-|[Wireshark](https://github.com/Jack-Liang/kalitools/blob/master/Information%20Gathering/Wireshark.md)|[WOL-E](https://github.com/Jack-Liang/kalitools/blob/master/Information%20Gathering/WOL-E.md)|[Xplico](https://github.com/Jack-Liang/kalitools/blob/master/Information%20Gathering/Xplico.md)||||
+|SSLyze|[THC-IPV6](THC-IPV6.md)|[theHarvester](theHarvester.md)|[TLSSLed](TLSSLed.md)|[twofi](twofi.md)|[URLCrazy](URLCrazy.md)|
+|[Wireshark](Wireshark.md)|[WOL-E](WOL-E.md)|[Xplico](Xplico.md)|[APT2](APT2.md)|[ident-user-enum](ident-user-enum.md)||
