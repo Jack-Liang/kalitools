@@ -1,7 +1,11 @@
-# dex2jar 
-
-## dex2jar软件包描述
-
+---
+title: dex2jar
+categories: Hardware Hacking
+tags: [dex2jar,Hardware Hacking,kali linux]
+date: 2019-06-25 11:19:00
+---
+0x00 dex2jar介绍
+-------------
 dex2jar包含以下这些组件:
 
 - dex读取器，用来读取Dalvik可执行文件(.dex/.odex)。它有与ASM相似的轻量级API。
@@ -17,7 +21,8 @@ dex2jar主页 | [Kali上的dex2jar项目](http://git.kali.org/gitweb/?p=packages
 - 作者: Panxiaobo
 - 证书: Apache-2.0
 
-### dex2jar软件包中包含的工具
+0x01 包含的工具
+----------------
 
 ##### d2j-jar2dex – 调用dx将jar转换为dex
 
@@ -32,7 +37,7 @@ d2j-jar2dex -- 调用dx将jar转换为dex。
 版本: 0.0.9.15
 ```
 
-### d2j-jar-remap–重命名jar文件中的包(package)/类(class)/方法(method)/域(field)
+##### d2j-jar-remap–重命名jar文件中的包(package)/类(class)/方法(method)/域(field)
 
 ```
 root@kali:~# d2j-jar-remap -h
@@ -47,7 +52,7 @@ d2j-jar-remap -- 重命名jar文件中的包(package)/类(class)/方法(method)/
 在线帮助文档: https://code.google.com/p/dex2jar/wiki/DeObfuscateJarWithDexTool
 ```
 
-### d2j-dex2jar–将dex转换为jar
+##### d2j-dex2jar–将dex转换为jar
 
 ```
 root@kali:~# d2j-dex2jar -h
@@ -69,7 +74,7 @@ options:
 版本: 读取器-1.15, 翻译器-0.0.9.15, ir-1.12
 ```
 
-### dex2jar–此工具已被弃用，若可能请使用d2j-dex2jar
+##### dex2jar–此工具已被弃用，若可能请使用d2j-dex2jar
 
 ```
 root@kali:~# dex2jar
@@ -78,7 +83,7 @@ dex2jar 版本: 翻译器-0.0.9.15
 dex2jar file1.dexORapk file2.dexORapk ...
 ```
 
-### d2j-jasmin2jar–将.j文件编译为.class文件
+##### d2j-jasmin2jar–将.j文件编译为.class文件
 
 ```
 root@kali:~# d2j-jasmin2jar -h
@@ -93,7 +98,7 @@ d2j-jasmin2jar -- d2j-jasmin2jar - 将.j文件编译为.class文件
 版本: 0.0.9.15
 ```
 
-### d2j-jar-access–增加或移除jar文件中对类(class)/方法(method)/域(field)的访问
+##### d2j-jar-access–增加或移除jar文件中对类(class)/方法(method)/域(field)的访问
 
 ```
 root@kali:~# d2j-jar-access -h
@@ -113,7 +118,7 @@ d2j-jar-access -- 增加或移除jar文件中对类(class)/方法(method)/域(fi
 版本: 0.0.9.15
 ```
 
-### d2j-asm-verify–校验jar文件中的.class 文件
+##### d2j-asm-verify–校验jar文件中的.class 文件
 
 ```
 root@kali:~# d2j-asm-verify -h
@@ -125,14 +130,14 @@ d2j-asm-verify -- 校验jar文件中的.class 文件
 版本: 0.0.9.15
 ```
 
-### d2j-dex-dump
+##### d2j-dex-dump
 
 ```
 root@kali:~# d2j-dex-dump -h
 将.dex或.apk文件中的数据dump至out.dump.jar文件中
 ```
 
-### d2j-init-deobf–为反混淆jar文件生成初始化配置文件
+##### d2j-init-deobf–为反混淆jar文件生成初始化配置文件
 
 ```
 root@kali:~# d2j-init-deobf -h
@@ -147,7 +152,7 @@ d2j-init-deobf -- 为反混淆jar文件生成初始化配置文件
 版本: 0.0.9.15
 ```
 
-### d2j-apk-sign–用测试证书对apk文件进行数字签名
+##### d2j-apk-sign–用测试证书对apk文件进行数字签名
 
 ```
 root@kali:~# d2j-apk-sign -h
@@ -161,7 +166,7 @@ d2j-apk-sign -- 用测试证书对apk文件进行数字签名。
 版本: 0.0.9.15
 ```
 
-### d2j-jar2jasmin–反汇编jar文件中的.class文件至jasmin文件
+##### d2j-jar2jasmin–反汇编jar文件中的.class文件至jasmin文件
 
 ```
 root@kali:~# d2j-jar2jasmin -h
@@ -176,7 +181,8 @@ d2j-jar2jasmin -- 反汇编jar文件中的.class文件至jasmin文件
 版本: 0.0.9.15
 ```
 
-### d2j-dex2jar用法示例
+0x02 d2j-dex2jar用法示例
+----------------
 ```
 root@kali:~# d2j-dex2jar /usr/share/metasploit-framework/data/android/apk/classes.dex 
 dex2jar /usr/share/metasploit-framework/data/android/apk/classes.dex -> classes-dex2jar.jar
