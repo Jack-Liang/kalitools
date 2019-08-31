@@ -26,7 +26,7 @@
 
 |Exploitation Tools||||||
 |:-:|:-:|:-:|:-:|:-:|:-:|
-|Armitage|Backdoor Factory|BeEF|cisco-auditing-tool|cisco-global-exploiter|cisco-ocs|
+|[Armitage](Exploitation%20Tools/Armitage.md)|Backdoor Factory|BeEF|cisco-auditing-tool|cisco-global-exploiter|cisco-ocs|
 |cisco-torch|Commix|crackle|exploitdb|jboss-autopwn|Linux Exploit Suggester|
 |Maltego Teeth|SET|ShellNoob|sqlmap|THC-IPV6|Yersinia|
 
