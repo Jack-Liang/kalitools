@@ -25,37 +25,31 @@ Kali Tools Translate Volunteers是一个公益项目，简称KTTV，目标是将
 
 QQ群：146478946
 
+---
 
-[ ](http://shields.io/)
-
-# English Translation
-
-## Kali Linux Tool Document Translation Program [! [License] (https://img.shields.io/github/license/mashape/apistatus.svg)] (http://shields.io/)
+# Kali Linux Tool Document Translation Program [![License](https://img.shields.io/github/license/mashape/apistatus.svg)](http://shields.io/)
  
 Kali Tools Translate Volunteers is a public welfare project, abbreviated as KTTV, and its goal is to localize all the description documents of http://tools.kali.org/tools-listing.
 
 Maybe you are:
 
--Technical cattle
--Security athlete
--English speakers
--Management expert
--......
+- Technical cattle
+- Security athlete
+- English speakers
+- Management expert
+- ......
 
 Even if you do n’t have a powerful penetration technology, we can make history together.
 
 Join the project and you will get:
 
--Good teamwork skills
--Friends from all over the world
--A meaningful experience
--Some unexpected surprises
+- Good teamwork skills
+- Friends from all over the world
+- A meaningful experience
+- Some unexpected surprises
 
 Come on, might as well let your emotions sway once, because your efforts will lower the threshold for more people to contact Kali and make your own contribution to cyber security.
 
 Project address: [github.com/Jack-Liang/kalitools](https://github.com/Jack-Liang/kalitools)
 
 QQ group: 146478946
-
-
-[] (http://shields.io/)
