@@ -9,6 +9,6 @@
 |[fragrouter](fragrouter.md)|[Ghost Phisher](Ghost-Fisher.md)|[GoLismero](golismero.md)|[goofile](goofile.md)|[hping3](hping3.md)|[InTrace](intrace.md)|
 |[iSMTP](iSMTP.md)|[lbd](lbd.md)|[Maltego Teeth](Maltego.md)|[masscan](masscan.md)|[Metagoofil](Metagoofil.md)|Miranda|
 |[nbtscan-unixwiz](nbtscan-unixwiz.md)|[Nmap](Nmap.md)|ntop|p0f|Parsero|Recon-ng|
-|SET|smtp-user-enum|snmp-check|sslcaudit|SSLsplit|sslstrip|
+|SET|smtp-user-enum|snmp-check|sslcaudit|SSLsplit|[sslstrip](sslstrip.md)|
 |SSLyze|[THC-IPV6](THC-IPV6.md)|[theHarvester](theHarvester.md)|[TLSSLed](TLSSLed.md)|[twofi](twofi.md)|[URLCrazy](URLCrazy.md)|
 |[Wireshark](Wireshark.md)|[WOL-E](WOL-E.md)|[Xplico](Xplico.md)|[APT2](APT2.md)|[ident-user-enum](ident-user-enum.md)|[SET](SET.md)|
