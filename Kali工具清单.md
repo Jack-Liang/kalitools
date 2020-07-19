@@ -9,7 +9,7 @@
 |[fragrouter](Information%20Gathering/fragrouter.md)|[Ghost Phisher](Information%20Gathering/Ghost-Fisher.md)|[GoLismero](Information%20Gathering/golismero.md)|[goofile](Information%20Gathering/goofile.md)|[hping3](Information%20Gathering/hping3.md)|[InTrace](Information%20Gathering/intrace.md)|
 |[iSMTP](Information%20Gathering/iSMTP.md)|[lbd](Information%20Gathering/lbd.md)|[Maltego Teeth](Information%20Gathering/Maltego.md)|[masscan](Information%20Gathering/masscan.md)|[Metagoofil](Information%20Gathering/Metagoofil.md)|Miranda|
 |[nbtscan-unixwiz](Information%20Gathering/nbtscan-unixwiz.md)|[Nmap](Information%20Gathering/Nmap.md)|ntop|p0f|Parsero|Recon-ng|
-|[SET](Information%20Gathering/SET.md)|smtp-user-enum|snmp-check|sslcaudit|SSLsplit|sslstrip|
+|[SET](Information%20Gathering/SET.md)|smtp-user-enum|snmp-check|sslcaudit|SSLsplit|[sslstrip](Information%20Gathering/sslstrip.md)|
 |SSLyze|[THC-IPV6](Information%20Gathering/THC-IPV6.md)|[theHarvester](Information%20Gathering/theHarvester.md)|[TLSSLed](Information%20Gathering/TLSSLed.md)|[twofi](Information%20Gathering/twofi.md)|[URLCrazy](Information%20Gathering/URLCrazy.md)|
 |[Wireshark](Information%20Gathering/Wireshark.md)|[WOL-E](Information%20Gathering/WOL-E.md)|[Xplico](Information%20Gathering/Xplico.md)|[APT2](Information%20Gathering/APT2.md)|[ident-user-enum](Information%20Gathering/ident-user-enum.md)||
 
