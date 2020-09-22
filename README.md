@@ -53,3 +53,15 @@ Come on, might as well let your emotions sway once, because your efforts will lo
 Project address: [github.com/Jack-Liang/kalitools](https://github.com/Jack-Liang/kalitools)
 
 QQ group: 146478946
+
+---
+
+## 待翻译：
+
+### Information Gathering
+Wireshark
+
+WOL-E
+
+Xplico
+
