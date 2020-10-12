@@ -1,5 +1,5 @@
 # Kali Linux工具文档翻译计划 [![执照](https://img.shields.io/github/license/mashape/apistatus.svg)](http://shields.io/)
- 
+
 Kali Tools Translate Volunteers是一个公益项目，简称KTTV，目标是将 http://tools.kali.org/tools-listing 的所有说明文档汉化。
 
 也许你是：
@@ -28,7 +28,7 @@ QQ群：146478946
 ---
 
 # Kali Linux Tool Document Translation Program [![License](https://img.shields.io/github/license/mashape/apistatus.svg)](http://shields.io/)
- 
+
 Kali Tools Translate Volunteers is a public welfare project, abbreviated as KTTV, and its goal is to localize all the description documents of http://tools.kali.org/tools-listing.
 
 Maybe you are:
@@ -59,9 +59,9 @@ QQ group: 146478946
 ## 待翻译：
 
 ### Information Gathering
-Wireshark
+- [ ] Wireshark
 
-WOL-E
+- [ ] WOL-E
 
-Xplico
+- [ ] Xplico
 
