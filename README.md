@@ -58,10 +58,15 @@ QQ group: 146478946
 
 ## 待翻译：
 
-### Information Gathering
-- [ ] Wireshark
+### Information Gathering 信息收集
 
-- [ ] WOL-E
-
-- [ ] Xplico
-
+- [ ] [Miranda](https://tools.kali.org/information-gathering/miranda)
+- [ ] [ntop](https://tools.kali.org/information-gathering/ntop)
+- [ ] [p0f](https://tools.kali.org/information-gathering/p0f)
+- [ ] [Parsero](https://tools.kali.org/information-gathering/parsero)
+- [ ] [Recon-ng](https://tools.kali.org/information-gathering/recon-ng)
+- [ ] [smtp-user-enum](https://tools.kali.org/information-gathering/smtp-user-enum)
+- [ ] [snmp-check](https://tools.kali.org/information-gathering/snmp-check)
+- [ ] [sslcaudit](https://tools.kali.org/information-gathering/sslcaudit)
+- [ ] [SSLsplit](https://tools.kali.org/information-gathering/sslsplit)
+- [ ] [SSLyze](https://tools.kali.org/information-gathering/sslyze)
