@@ -23,6 +23,8 @@ Kali Tools Translate Volunteers是一个公益项目，简称KTTV，目标是将
 
 项目地址：[github.com/Jack-Liang/kalitools](https://github.com/Jack-Liang/kalitools)
 
+![](https://qun.qq.com/qrcode/index?data=https%3A%2F%2Fqm.qq.com%2Fcgi-bin%2Fqm%2Fqr%3Fk%3Du4Nc8IC-YGkYOPOK7uVWuXIbrB0syaog%26jump_from%3Dwebapi%26qr%3D1)
+
 QQ群：146478946
 
 ---
@@ -51,6 +53,8 @@ Join the project and you will get:
 Come on, might as well let your emotions sway once, because your efforts will lower the threshold for more people to contact Kali and make your own contribution to cyber security.
 
 Project address: [github.com/Jack-Liang/kalitools](https://github.com/Jack-Liang/kalitools)
+
+![](https://qun.qq.com/qrcode/index?data=https%3A%2F%2Fqm.qq.com%2Fcgi-bin%2Fqm%2Fqr%3Fk%3Du4Nc8IC-YGkYOPOK7uVWuXIbrB0syaog%26jump_from%3Dwebapi%26qr%3D1)
 
 QQ group: 146478946
 
