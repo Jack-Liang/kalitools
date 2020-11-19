@@ -64,7 +64,7 @@ QQ group: 146478946
 
 ### Information Gathering 信息收集
 
-- [ ] [Miranda](https://tools.kali.org/information-gathering/miranda)
+- [X] [Miranda](https://tools.kali.org/information-gathering/miranda)
 - [ ] [ntop](https://tools.kali.org/information-gathering/ntop)
 - [ ] [p0f](https://tools.kali.org/information-gathering/p0f)
 - [ ] [Parsero](https://tools.kali.org/information-gathering/parsero)
