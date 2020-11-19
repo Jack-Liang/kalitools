@@ -1,8 +1,7 @@
 ---
-​---
 title: Miranda 
 categories: Information Gathering
-tags: [kali linux，information gathering，UPNP]
+tags: [kali linux,information gathering,UPNP]
 date: 2020-11-19 11:10:00
 ---
 
@@ -23,6 +22,7 @@ Miranda 是一个基于 Python 的 UPNP （即插即用）的客户端应用，�
 Miranda建立在Linux系统上并用于Linux系统，并且已经在具有Python 2.5的Linux 2.6内核上进行了测试。但是，由于它是用Python编写的，因此大多数功能应可用于任何受Python支持的平台。Miranda已针对Linksys，D-Link，Belkin 和 ActionTec 等多家供应商的IGD（交互式图形设计系统）进行了测试。默认情况下，所有Python模块均已安装在Linux Mint 5（Ubuntu 8.04）测试系统上。
 
 源码: https://code.google.com/p/mirandaupnptool/
+
 [Miranda 主页](http://code.google.com/p/mirandaupnptool/) | [Kali Miranda Repo](https://gitlab.com/kalilinux/packages/miranda)
 
 - 作者：克雷格·赫夫纳（Craig Heffner）
@@ -48,8 +48,9 @@ root@kali:~# miranda -h
 
 ### miranda 用法示例
 
+在接口 eth0 ***（-i eth0）*** 上启动，以详细模式 ***（-v）***，然后启动发现模式 ***（msearch）***：
+
 ```shell
-Start on interface eth0 ***(-i eth0)\*** in verbose mode ***(-v)\***, then start discovery mode ***(msearch)\***:
 
 root@kali:~# miranda -i eth0 -v
 
@@ -66,4 +67,3 @@ upnp> msearch
 XML 文件位于 http://192.168.1.230:80/description.xml
 设备正在运行 FreeRTOS/6.0.5, UPnP/1.0, IpBridge/0.1
 ```
-
