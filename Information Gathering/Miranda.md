@@ -59,7 +59,7 @@ root@kali:~# miranda -i eth0 -v
 启用详细模式！
 upnp> msearch
 
-进入'upnp:rootdevice'的发现模式 , 按 Ctl+C to 停止...
+进入'upnp:rootdevice'的发现模式 , 按 Ctl+C 停止...
 
 ****************************************************************
 
