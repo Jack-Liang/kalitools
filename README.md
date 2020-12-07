@@ -1,3 +1,5 @@
+![](https://socialify.git.ci/Jack-Liang/kalitools/image?description=1&font=Bitter&forks=1&issues=1&logo=https%3A%2F%2Ftools.kali.org%2Fwp-content%2Fuploads%2F2015%2F12%2Ftools-logo-1.png&pattern=Circuit%20Board&stargazers=1&theme=Light)
+
 # Kali Linux工具文档翻译计划 [![执照](https://img.shields.io/github/license/mashape/apistatus.svg)](http://shields.io/)
 
 Kali Tools Translate Volunteers是一个公益项目，简称KTTV，目标是将 http://tools.kali.org/tools-listing 的所有说明文档汉化。
